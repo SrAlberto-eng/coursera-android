@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Teléfono en horizontal: hay menos alto, el título se reduce -->
+<resources>
+    <dimen name="tamano_titulo">34sp</dimen>
+</resources>

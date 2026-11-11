@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Silueta de persona blanca para el ícono de la app -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Cabeza -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M43,44 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0 Z" />
+    <!-- Hombros -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M34,76 C34,64 43,58 54,58 C65,58 74,64 74,76 Z" />
+</vector>

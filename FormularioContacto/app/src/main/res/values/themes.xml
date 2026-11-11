@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema Material3 con barra de título. Requiere AppCompatActivity. -->
+    <style name="Theme.FormularioContacto" parent="Theme.Material3.Light">
+        <item name="colorPrimary">@color/azul</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorSurface">@color/blanco</item>
+        <item name="android:colorBackground">@color/blanco</item>
+
+        <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MiPrimerProyecto" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- En Android 14 o menor la barra de estado toma el color del cielo -->
+        <item name="android:statusBarColor">@color/cielo</item>
+    </style>
+</resources>

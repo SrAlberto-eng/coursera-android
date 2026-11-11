@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Teléfono en vertical (valores por defecto) -->
+<resources>
+    <dimen name="tamano_titulo">40sp</dimen>
+    <dimen name="tamano_boton">16sp</dimen>
+    <dimen name="ancho_boton">140dp</dimen>
+    <!-- Alto de la parte fija del nine-patch (robot y nubes) + un poco de aire -->
+    <dimen name="zona_robot">130dp</dimen>
+</resources>

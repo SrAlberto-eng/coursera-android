@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contacto</string>
+
+    <!-- Activity 1: formulario -->
+    <string name="hint_nombre">Nombre completo</string>
+    <string name="etiqueta_fecha">Fecha de nacimiento</string>
+    <string name="hint_telefono">Teléfono</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_descripcion">Descripción del contacto</string>
+    <string name="siguiente">Siguiente</string>
+
+    <string name="error_nombre">Escribe el nombre</string>
+    <string name="error_telefono">Escribe el teléfono</string>
+    <string name="error_email">Escribe un email válido</string>
+    <string name="error_descripcion">Escribe una descripción</string>
+
+    <!-- Activity 2: confirmación. -->
+    <string name="confirmar_datos">Confirmar datos</string>
+    <string name="dato_fecha">Fecha de nacimiento: %1$s</string>
+    <string name="dato_telefono">Tel. %1$s</string>
+    <string name="dato_email">Email: %1$s</string>
+    <string name="dato_descripcion">Descripción: %1$s</string>
+    <string name="editar_datos">Editar datos</string>
+</resources>
