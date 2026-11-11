@@ -7,6 +7,12 @@ La app tiene dos activities.
 1. **FormularioActivity** pide nombre completo, fecha de nacimiento, teléfono, email y una descripción del contacto.
 2. **ConfirmarDatosActivity** muestra los datos capturados. El botón "Editar datos" regresa al formulario con los campos llenos.
 
+## Capturas de pantalla
+
+| Formulario de contacto | Confirmación de datos |
+| :---: | :---: |
+| ![Formulario Activity](docs/formulario.png) | ![Confirmar Datos Activity](docs/confirmacion.png) |
+
 ## Estructura
 
 ```
