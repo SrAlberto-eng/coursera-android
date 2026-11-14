@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Identidad tomada del logotipo de Puppy -->
+<resources>
+    <!-- Primary: el cian del fondo del logo -->
+    <color name="colorPrimary">#FF66DDE3</color>
+    <!-- Dark primary: el mismo cian, más oscuro. Va en la barra de estado. -->
+    <color name="colorPrimaryDark">#FF1B8D93</color>
+    <!-- Accent: el rojo del collar y del techo de la casita -->
+    <color name="colorAccent">#FFE83B35</color>
+
+    <!-- Café del texto "Puppy" y del piso. Texto e íconos sobre el cian. -->
+    <color name="cafe">#FF3C2F33</color>
+    <!-- Dorado de la placa del collar. Hueso del raiting. -->
+    <color name="dorado">#FFDCBE68</color>
+    <!-- Cian muy claro para el fondo de las pantallas -->
+    <color name="fondo">#FFEEFBFC</color>
+    <color name="blanco">#FFFFFFFF</color>
+</resources>

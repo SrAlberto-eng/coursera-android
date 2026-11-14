@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fitsSystemWindows: el CoordinatorLayout deja espacio para las barras del sistema
+     y pinta el área de la barra de estado con statusBarBackground (dark primary). -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:statusBarBackground="@color/colorPrimaryDark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_mascotas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/espacio_lista"
+            android:paddingBottom="@dimen/espacio_bajo_fab" />
+
+    </LinearLayout>
+
+    <!-- Botón flotante para subir la foto de una mascota. Toma el color accent. -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_camara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/margen_fab"
+        android:contentDescription="@string/subir_foto"
+        app:srcCompat="@drawable/ic_camara" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

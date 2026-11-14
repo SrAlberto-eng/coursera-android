@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margen_tarjeta">16dp</dimen>
+    <dimen name="espacio_tarjetas">8dp</dimen>
+    <dimen name="espacio_lista">8dp</dimen>
+    <dimen name="margen_fab">16dp</dimen>
+    <!-- Espacio al final de la lista para que el botón flotante no tape la última tarjeta -->
+    <dimen name="espacio_bajo_fab">88dp</dimen>
+</resources>

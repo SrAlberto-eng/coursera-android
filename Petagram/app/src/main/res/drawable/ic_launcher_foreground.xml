@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Huella café para el ícono de la app -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#3C2F33"
+        android:pathData="M39.3,65.1 A14.7,12 0 1,0 68.7,65.1 A14.7,12 0 1,0 39.3,65.1 Z M29.63,52.51 A5.7,7.5 -25 1,0 39.97,47.69 A5.7,7.5 -25 1,0 29.63,52.51 Z M39.96,39.88 A6.3,8.1 -8 1,0 52.44,38.12 A6.3,8.1 -8 1,0 39.96,39.88 Z M55.56,38.12 A6.3,8.1 8 1,0 68.04,39.88 A6.3,8.1 8 1,0 55.56,38.12 Z M68.03,47.69 A5.7,7.5 25 1,0 78.37,52.51 A5.7,7.5 25 1,0 68.03,47.69 Z" />
+</vector>

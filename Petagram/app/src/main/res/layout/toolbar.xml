@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Barra superior que comparten las dos pantallas. Se agrega con <include>.
+     El estilo Primary pinta el fondo con colorPrimary y el texto e íconos con colorOnPrimary. -->
+<com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:elevation="4dp">
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="start|center_vertical"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_huella" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/app_name"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="?attr/colorOnPrimary" />
+
+</com.google.android.material.appbar.MaterialToolbar>

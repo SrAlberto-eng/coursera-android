@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ilustración de mascota (vector propio) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#66DDE3"
+        android:pathData="M0,0 H200 V200 H0 Z" />
+    <path
+        android:fillColor="#5D3A26"
+        android:pathData="M40.41,95 A18,37 30 1,0 71.59,113 A18,37 30 1,0 40.41,95 Z" />
+    <path
+        android:fillColor="#5D3A26"
+        android:pathData="M128.41,113 A18,37 -30 1,0 159.59,95 A18,37 -30 1,0 128.41,113 Z" />
+    <path
+        android:fillColor="#B07A4C"
+        android:pathData="M45,110 A55,55 0 1,0 155,110 A55,55 0 1,0 45,110 Z" />
+    <path
+        android:fillColor="#E8C9A4"
+        android:pathData="M71,140 A29,21 0 1,0 129,140 A29,21 0 1,0 71,140 Z" />
+    <path
+        android:fillColor="#E8C9A4"
+        android:pathData="M76.5,93 A4.5,4.5 0 1,0 85.5,93 A4.5,4.5 0 1,0 76.5,93 Z" />
+    <path
+        android:fillColor="#E8C9A4"
+        android:pathData="M114.5,93 A4.5,4.5 0 1,0 123.5,93 A4.5,4.5 0 1,0 114.5,93 Z" />
+    <path
+        android:fillColor="#2B2426"
+        android:pathData="M72.5,106 A6.5,6.5 0 1,0 85.5,106 A6.5,6.5 0 1,0 72.5,106 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M79.2,103.8 A2,2 0 1,0 83.2,103.8 A2,2 0 1,0 79.2,103.8 Z" />
+    <path
+        android:fillColor="#2B2426"
+        android:pathData="M114.5,106 A6.5,6.5 0 1,0 127.5,106 A6.5,6.5 0 1,0 114.5,106 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M121.2,103.8 A2,2 0 1,0 125.2,103.8 A2,2 0 1,0 121.2,103.8 Z" />
+    <path
+        android:fillColor="#2B2426"
+        android:pathData="M89.5,127 A10.5,7.5 0 1,0 110.5,127 A10.5,7.5 0 1,0 89.5,127 Z" />
+    <path
+        android:strokeColor="#2B2426"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M100,134 V140 M88,139 Q94,147 100,140 Q106,147 112,139" />
+</vector>

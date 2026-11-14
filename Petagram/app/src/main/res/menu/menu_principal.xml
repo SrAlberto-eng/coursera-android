@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- actionLayout reemplaza el ícono normal por una vista propia: la estrella con el número -->
+    <item
+        android:id="@+id/action_favoritas"
+        android:title="@string/favoritas"
+        app:actionLayout="@layout/action_view_favoritas"
+        app:showAsAction="always" />
+</menu>

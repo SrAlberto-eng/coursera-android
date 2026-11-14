@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema Material Components. Está construido sobre AppCompat, que lleva Material Design
+         a versiones anteriores de Android. NoActionBar porque cada pantalla trae su Toolbar. -->
+    <style name="Theme.Petagram" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Los tres colores de la identidad, con sus nombres clásicos -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Material Components llama así a primary dark y a accent -->
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+
+        <!-- Color del texto y los íconos que van encima de cada color -->
+        <item name="colorOnPrimary">@color/cafe</item>
+        <item name="colorOnSecondary">@color/blanco</item>
+
+        <item name="android:colorBackground">@color/fondo</item>
+        <!-- Barra de estado en Android 14 o menor. En Android 15+ la pinta el CoordinatorLayout. -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
+</resources>

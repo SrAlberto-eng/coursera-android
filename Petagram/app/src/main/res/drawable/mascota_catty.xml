@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ilustración de mascota (vector propio) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#EC86AE"
+        android:pathData="M0,0 H200 V200 H0 Z" />
+    <path
+        android:fillColor="#4A4446"
+        android:pathData="M38.15,82.5 A19,40 -20 1,0 73.85,69.5 A19,40 -20 1,0 38.15,82.5 Z" />
+    <path
+        android:fillColor="#4A4446"
+        android:pathData="M126.15,69.5 A19,40 20 1,0 161.85,82.5 A19,40 20 1,0 126.15,69.5 Z" />
+    <path
+        android:fillColor="#F2C28E"
+        android:pathData="M44,112 A56,56 0 1,0 156,112 A56,56 0 1,0 44,112 Z" />
+    <path
+        android:fillColor="#FBE6CB"
+        android:pathData="M69,140 A31,23 0 1,0 131,140 A31,23 0 1,0 69,140 Z" />
+    <path
+        android:fillColor="#2B2426"
+        android:pathData="M72.5,108 A6.5,6.5 0 1,0 85.5,108 A6.5,6.5 0 1,0 72.5,108 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M79.2,105.8 A2,2 0 1,0 83.2,105.8 A2,2 0 1,0 79.2,105.8 Z" />
+    <path
+        android:fillColor="#2B2426"
+        android:pathData="M114.5,108 A6.5,6.5 0 1,0 127.5,108 A6.5,6.5 0 1,0 114.5,108 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M121.2,105.8 A2,2 0 1,0 125.2,105.8 A2,2 0 1,0 121.2,105.8 Z" />
+    <path
+        android:fillColor="#2B2426"
+        android:pathData="M89.5,128 A10.5,7.5 0 1,0 110.5,128 A10.5,7.5 0 1,0 89.5,128 Z" />
+    <path
+        android:strokeColor="#2B2426"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M100,135 V141 M88,140 Q94,148 100,141 Q106,148 112,140" />
+</vector>

@@ -1,0 +1,50 @@
+package com.sralberto.petagram;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.appbar.MaterialToolbar;
+
+import java.util.ArrayList;
+
+/**
+ * Las últimas 5 mascotas que te gustaron. Por ahora son datos fijos ("dummy").
+ */
+public class FavoritasActivity extends AppCompatActivity {
+
+    public static final int TOTAL_FAVORITAS = 5;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_favoritas);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar barra = getSupportActionBar();
+        if (barra != null) {
+            barra.setDisplayShowTitleEnabled(false);
+            // Muestra la flecha para subir. A dónde lleva lo dice parentActivityName en el manifest.
+            barra.setDisplayHomeAsUpEnabled(true);
+        }
+
+        RecyclerView rvFavoritas = findViewById(R.id.rv_favoritas);
+        rvFavoritas.setLayoutManager(new LinearLayoutManager(this));
+        rvFavoritas.setAdapter(new MascotaAdaptador(crearFavoritas()));
+    }
+
+    /** DataSet fijo de TOTAL_FAVORITAS mascotas. Más adelante saldrá de los huesos reales. */
+    private ArrayList<Mascota> crearFavoritas() {
+        ArrayList<Mascota> favoritas = new ArrayList<>();
+        favoritas.add(new Mascota("Ronny", R.drawable.mascota_ronny, 3));
+        favoritas.add(new Mascota("Catty", R.drawable.mascota_catty, 5));
+        favoritas.add(new Mascota("Kira", R.drawable.mascota_kira, 2));
+        favoritas.add(new Mascota("Toby", R.drawable.mascota_toby, 4));
+        favoritas.add(new Mascota("Luna", R.drawable.mascota_luna, 1));
+        return favoritas;
+    }
+}
