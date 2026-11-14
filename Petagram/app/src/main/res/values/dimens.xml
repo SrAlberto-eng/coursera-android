@@ -3,7 +3,9 @@
     <dimen name="margen_tarjeta">16dp</dimen>
     <dimen name="espacio_tarjetas">8dp</dimen>
     <dimen name="espacio_lista">8dp</dimen>
+    <dimen name="espacio_campos">12dp</dimen>
     <dimen name="margen_fab">16dp</dimen>
-    <!-- Espacio al final de la lista para que el botón flotante no tape la última tarjeta -->
+    <!-- Espacio al final de las listas para que el botón flotante no tape el último elemento -->
     <dimen name="espacio_bajo_fab">88dp</dimen>
+    <dimen name="tamano_foto_perfil">96dp</dimen>
 </resources>

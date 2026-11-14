@@ -6,4 +6,28 @@
     <string name="dar_hueso">Dar un hueso</string>
     <string name="subir_foto">Subir foto</string>
     <string name="subir_foto_pronto">Pronto podrás subir la foto de tu mascota</string>
+
+    <string name="pestana_lista">Lista de mascotas</string>
+    <string name="pestana_perfil">Perfil de la mascota</string>
+
+    <string name="contacto">Contacto</string>
+    <string name="contacto_instrucciones">Mándame un comentario sobre Petagram y te contesto a tu correo.</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="hint_correo">Correo</string>
+    <string name="hint_mensaje">Mensaje</string>
+    <string name="enviar_comentario">Enviar comentario</string>
+    <string name="enviando">Enviando…</string>
+    <string name="error_nombre">Escribe tu nombre</string>
+    <string name="error_correo">Escribe un correo válido</string>
+    <string name="error_mensaje">Escribe tu mensaje</string>
+    <string name="comentario_enviado">¡Gracias! Tu comentario se envió</string>
+    <string name="error_envio">No se pudo enviar el comentario. Revisa tu conexión e inténtalo otra vez.</string>
+    <string name="correo_sin_configurar">Falta configurar la cuenta de correo en local.properties</string>
+
+    <string name="acerca_de">Acerca de</string>
+    <string name="desarrollador_iniciales">JM</string>
+    <string name="desarrollador_nombre">Jorge Alberto Méndez Oseguera</string>
+    <string name="desarrollador_carrera">Ingeniería en Software y Tecnologías Emergentes · UABC</string>
+    <string name="desarrollador_bio">Soy estudiante de la UABC en Tijuana. Hice Petagram en el curso de desarrollo de aplicaciones Android de Coursera, donde practiqué Material Design, listas con RecyclerView, menús y Fragments.</string>
+    <string name="desarrollador_github">https://github.com/SrAlberto-eng</string>
 </resources>

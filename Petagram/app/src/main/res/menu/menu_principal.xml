@@ -8,4 +8,14 @@
         android:title="@string/favoritas"
         app:actionLayout="@layout/action_view_favoritas"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_contacto"
+        android:title="@string/contacto"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_acerca_de"
+        android:title="@string/acerca_de"
+        app:showAsAction="never" />
 </menu>

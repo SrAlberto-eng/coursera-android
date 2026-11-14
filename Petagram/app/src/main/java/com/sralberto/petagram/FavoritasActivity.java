@@ -11,9 +11,6 @@ import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 
-/**
- * Las últimas 5 mascotas que te gustaron. Por ahora son datos fijos ("dummy").
- */
 public class FavoritasActivity extends AppCompatActivity {
 
     public static final int TOTAL_FAVORITAS = 5;
@@ -28,7 +25,7 @@ public class FavoritasActivity extends AppCompatActivity {
         ActionBar barra = getSupportActionBar();
         if (barra != null) {
             barra.setDisplayShowTitleEnabled(false);
-            // Muestra la flecha para subir. A dónde lleva lo dice parentActivityName en el manifest.
+            // La flecha regresa a la pantalla que dice parentActivityName en el manifest
             barra.setDisplayHomeAsUpEnabled(true);
         }
 
@@ -37,7 +34,7 @@ public class FavoritasActivity extends AppCompatActivity {
         rvFavoritas.setAdapter(new MascotaAdaptador(crearFavoritas()));
     }
 
-    /** DataSet fijo de TOTAL_FAVORITAS mascotas. Más adelante saldrá de los huesos reales. */
+    // Datos fijos mientras la app no guarda cuáles mascotas te gustaron
     private ArrayList<Mascota> crearFavoritas() {
         ArrayList<Mascota> favoritas = new ArrayList<>();
         favoritas.add(new Mascota("Ronny", R.drawable.mascota_ronny, 3));

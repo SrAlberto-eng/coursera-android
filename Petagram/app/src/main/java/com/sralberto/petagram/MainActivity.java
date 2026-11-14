@@ -3,30 +3,28 @@ package com.sralberto.petagram;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
-import java.util.ArrayList;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ArrayList<Mascota> mascotas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // La Toolbar del layout funciona como la barra de acción de la activity
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar barra = getSupportActionBar();
@@ -35,27 +33,27 @@ public class MainActivity extends AppCompatActivity {
             barra.setDisplayShowTitleEnabled(false);
         }
 
-        inicializarListaMascotas();
-
-        RecyclerView rvMascotas = findViewById(R.id.rv_mascotas);
-        // El LayoutManager decide cómo se acomodan las tarjetas. Aquí, una debajo de otra.
-        rvMascotas.setLayoutManager(new LinearLayoutManager(this));
-        rvMascotas.setAdapter(new MascotaAdaptador(mascotas));
+        configurarPestanas();
 
         FloatingActionButton fabCamara = findViewById(R.id.fab_camara);
         fabCamara.setOnClickListener(v ->
                 Snackbar.make(v, R.string.subir_foto_pronto, Snackbar.LENGTH_SHORT).show());
     }
 
-    /** DataSet: las mascotas que muestra la lista. Todas empiezan sin huesos. */
-    private void inicializarListaMascotas() {
-        mascotas = new ArrayList<>();
-        mascotas.add(new Mascota("Catty", R.drawable.mascota_catty, 0));
-        mascotas.add(new Mascota("Ronny", R.drawable.mascota_ronny, 0));
-        mascotas.add(new Mascota("Luna", R.drawable.mascota_luna, 0));
-        mascotas.add(new Mascota("Max", R.drawable.mascota_max, 0));
-        mascotas.add(new Mascota("Kira", R.drawable.mascota_kira, 0));
-        mascotas.add(new Mascota("Toby", R.drawable.mascota_toby, 0));
+    private void configurarPestanas() {
+        ViewPager2 viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(new PaginasAdaptador(this));
+
+        TabLayout tabs = findViewById(R.id.tabs);
+        new TabLayoutMediator(tabs, viewPager, (pestana, posicion) -> {
+            if (posicion == PaginasAdaptador.PAGINA_LISTA) {
+                pestana.setIcon(R.drawable.ic_inicio);
+                pestana.setContentDescription(R.string.pestana_lista);
+            } else {
+                pestana.setIcon(R.drawable.ic_perfil_mascota);
+                pestana.setContentDescription(R.string.pestana_perfil);
+            }
+        }).attach();
     }
 
     @Override
@@ -68,12 +66,26 @@ public class MainActivity extends AppCompatActivity {
         if (estrella != null) {
             TextView contador = estrella.findViewById(R.id.tv_contador_favoritas);
             contador.setText(String.valueOf(FavoritasActivity.TOTAL_FAVORITAS));
-            estrella.setOnClickListener(v -> abrirFavoritas());
+            estrella.setOnClickListener(v -> abrir(FavoritasActivity.class));
         }
         return true;
     }
 
-    private void abrirFavoritas() {
-        startActivity(new Intent(this, FavoritasActivity.class));
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_contacto) {
+            abrir(ContactoActivity.class);
+            return true;
+        }
+        if (id == R.id.action_acerca_de) {
+            abrir(AcercaDeActivity.class);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void abrir(Class<?> pantalla) {
+        startActivity(new Intent(this, pantalla));
     }
 }

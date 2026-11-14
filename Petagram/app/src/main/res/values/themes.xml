@@ -17,6 +17,7 @@
         <item name="colorOnSecondary">@color/blanco</item>
 
         <item name="android:colorBackground">@color/fondo</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <!-- Barra de estado en Android 14 o menor. En Android 15+ la pinta el CoordinatorLayout. -->
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
     </style>

@@ -6,16 +6,15 @@ Módulos elaborados del curso
 
 1. **Módulo 1.** Identidad con Material Design a partir del logotipo de Puppy.
 2. **Módulo 2.** Petagram, una lista de mascotas a las que les puedes dar huesos, más una pantalla con las 5 favoritas.
+3. **Módulo 6.** Menús y Fragments. Pestañas con ViewPager, perfil de la mascota, formulario de Contacto que manda correo con JavaMail y pantalla de Acerca de.
 
-## Capturas
+## Módulo 2 - Capturas
 
 | Lista de mascotas | 5 mascotas favoritas |
 |---|---|
 | ![Lista de mascotas](docs/lista.png) | ![Favoritas](docs/favoritas.png) |
 
-## Módulo 1. Identidad
-
-Todos los colores salen del logo de Puppy.
+## Identidad
 
 ![Paleta](docs/paleta.png)
 
@@ -28,12 +27,16 @@ Todos los colores salen del logo de Puppy.
 | Raiting | `#DCBE68` | Placa del collar | Hueso dorado |
 | Fondo | `#EEFBFC` | Cian muy claro | Fondo de las pantallas |
 
-## Módulo 2. Petagram
 
-## Notas
+## Módulo 6 - Capturas
 
-- Las ilustraciones de las mascotas y los íconos son vectores hechos para este proyecto. La estrella es el ícono "star" de Material Icons, en lugar del de icons8 que sugiere la actividad.
-- Los huesos se guardan solo en memoria. Si giras el teléfono o cierras la app, regresan a 0.
+| Inicio | Perfil de la mascota | Menú |
+|---|---|---|
+| ![Inicio](docs/modulo6_inicio.png) | ![Perfil](docs/modulo6_perfil.png) | ![Menú](docs/modulo6_menu.png) |
+
+| Contacto | Acerca de |
+|---|---|
+| ![Contacto](docs/modulo6_contacto.png) | ![Acerca de](docs/modulo6_acercade.png) |
 
 ## Estructura
 
@@ -41,14 +44,19 @@ Todos los colores salen del logo de Puppy.
 app/src/main/
 ├── AndroidManifest.xml
 ├── java/com/sralberto/petagram/
-│   ├── MainActivity.java          lista de mascotas
-│   ├── FavoritasActivity.java     5 favoritas
-│   ├── Mascota.java               entidad
-│   └── MascotaAdaptador.java      adapter y ViewHolder
+│   ├── MainActivity.java            barra, pestañas, menú y botón flotante
+│   ├── PaginasAdaptador.java        qué Fragment va en cada pestaña
+│   ├── ListaMascotasFragment.java   lista de mascotas
+│   ├── PerfilMascotaFragment.java   perfil de Ronny
+│   ├── FavoritasActivity.java       5 favoritas
+│   ├── ContactoActivity.java        formulario de contacto
+│   ├── CorreoContacto.java          envío con JavaMail
+│   ├── AcercaDeActivity.java        bio del desarrollador
+│   ├── Mascota.java / Foto.java     entidades
+│   └── MascotaAdaptador.java / FotoAdaptador.java
 └── res/
-    ├── drawable/            mascotas, huesos, huella, estrella, cámara
-    ├── layout/              activity_main, activity_favoritas, item_mascota,
-    │                        toolbar, action_view_favoritas
+    ├── drawable/            mascotas, huesos, huella, estrella, cámara, íconos de pestañas
+    ├── layout/              activities, fragments, items, toolbar, action_view_favoritas
     ├── menu/                menu_principal.xml
     ├── mipmap-anydpi-v26/   ic_launcher.xml
     └── values/              colors, themes, strings, dimens

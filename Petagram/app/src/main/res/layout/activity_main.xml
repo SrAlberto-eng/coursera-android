@@ -13,19 +13,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_mascotas"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingTop="@dimen/espacio_lista"
-            android:paddingBottom="@dimen/espacio_bajo_fab" />
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/toolbar" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                style="@style/Widget.MaterialComponents.TabLayout.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/colorAccent" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
-    <!-- Botón flotante para subir la foto de una mascota. Toma el color accent. -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_camara"
         android:layout_width="wrap_content"

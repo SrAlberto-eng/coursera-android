@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Barra superior que comparten las dos pantallas. Se agrega con <include>.
-     El estilo Primary pinta el fondo con colorPrimary y el texto e íconos con colorOnPrimary. -->
+<!-- Barra superior que comparten todas las pantallas. Va dentro de un AppBarLayout. -->
 <com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     style="@style/Widget.MaterialComponents.Toolbar.Primary"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:elevation="4dp">
+    app:contentInsetStartWithNavigation="0dp">
 
     <ImageView
         android:layout_width="28dp"
