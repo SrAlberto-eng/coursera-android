@@ -1,6 +1,8 @@
 package com.sralberto.petagram;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 
 public class FavoritasActivity extends AppCompatActivity {
 
-    public static final int TOTAL_FAVORITAS = 5;
+    private BaseDatosMascotas baseDatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +31,20 @@ public class FavoritasActivity extends AppCompatActivity {
             barra.setDisplayHomeAsUpEnabled(true);
         }
 
+        baseDatos = new BaseDatosMascotas(this);
+        ArrayList<Mascota> favoritas = baseDatos.obtenerFavoritas();
+
         RecyclerView rvFavoritas = findViewById(R.id.rv_favoritas);
         rvFavoritas.setLayoutManager(new LinearLayoutManager(this));
-        rvFavoritas.setAdapter(new MascotaAdaptador(crearFavoritas()));
+        rvFavoritas.setAdapter(new MascotaAdaptador(favoritas, baseDatos));
+
+        TextView tvSinFavoritas = findViewById(R.id.tv_sin_favoritas);
+        tvSinFavoritas.setVisibility(favoritas.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
-    // Datos fijos mientras la app no guarda cuáles mascotas te gustaron
-    private ArrayList<Mascota> crearFavoritas() {
-        ArrayList<Mascota> favoritas = new ArrayList<>();
-        favoritas.add(new Mascota("Ronny", R.drawable.mascota_ronny, 3));
-        favoritas.add(new Mascota("Catty", R.drawable.mascota_catty, 5));
-        favoritas.add(new Mascota("Kira", R.drawable.mascota_kira, 2));
-        favoritas.add(new Mascota("Toby", R.drawable.mascota_toby, 4));
-        favoritas.add(new Mascota("Luna", R.drawable.mascota_luna, 1));
-        return favoritas;
+    @Override
+    protected void onDestroy() {
+        baseDatos.close();
+        super.onDestroy();
     }
 }

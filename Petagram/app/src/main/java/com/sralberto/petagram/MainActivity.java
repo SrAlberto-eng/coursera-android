@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         View estrella = menu.findItem(R.id.action_favoritas).getActionView();
         if (estrella != null) {
             TextView contador = estrella.findViewById(R.id.tv_contador_favoritas);
-            contador.setText(String.valueOf(FavoritasActivity.TOTAL_FAVORITAS));
+            contador.setText(String.valueOf(BaseDatosMascotas.MAXIMO_FAVORITAS));
             estrella.setOnClickListener(v -> abrir(FavoritasActivity.class));
         }
         return true;

@@ -25,7 +25,7 @@ public class PerfilMascotaFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_perfil_mascota, container, false);
 
-        Mascota mascota = new Mascota("Ronny", R.drawable.mascota_ronny, 0);
+        Mascota mascota = new Mascota(2, "Ronny", R.drawable.mascota_ronny, 0);
 
         ImageView imgPerfil = vista.findViewById(R.id.img_perfil);
         imgPerfil.setImageResource(mascota.getFoto());

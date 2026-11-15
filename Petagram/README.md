@@ -7,6 +7,7 @@ Módulos elaborados del curso
 1. **Módulo 1.** Identidad con Material Design a partir del logotipo de Puppy.
 2. **Módulo 2.** Petagram, una lista de mascotas a las que les puedes dar huesos, más una pantalla con las 5 favoritas.
 3. **Módulo 6.** Menús y Fragments. Pestañas con ViewPager, perfil de la mascota, formulario de Contacto que manda correo con JavaMail y pantalla de Acerca de.
+4. **Módulo 8.** Base de datos. Las 5 favoritas se guardan en SQLite y cambian cada vez que le das un hueso a una mascota.
 
 ## Módulo 2 - Capturas
 
@@ -38,6 +39,28 @@ Módulos elaborados del curso
 |---|---|
 | ![Contacto](docs/modulo6_contacto.png) | ![Acerca de](docs/modulo6_acercade.png) |
 
+## Módulo 8 - Capturas
+
+| Lista con huesos | Últimas 5 favoritas |
+|---|---|
+| ![Lista](docs/modulo8_lista.png) | ![Favoritas](docs/modulo8_favoritas.png) |
+
+## Módulo 8 - Modelo de base de datos
+
+```mermaid
+erDiagram
+    mascota {
+        INTEGER id UK "único por mascota"
+        TEXT nombre
+        TEXT foto "nombre del drawable, por ejemplo mascota_catty"
+        INTEGER raiting "huesos que lleva"
+    }
+```
+
+Es una sola tabla con los mismos campos que la clase `Mascota`. La foto se guarda por nombre porque el número de `R.drawable` puede cambiar cada vez que compilas.
+
+Para saber cuáles son las más recientes se usa el `rowid`, un número que SQLite le da a cada fila y que crece con cada inserción. Al darle un hueso a una mascota, su fila se borra y se vuelve a insertar, así queda como la más reciente. Después se borran las filas que no estén entre las 5 más nuevas.
+
 ## Estructura
 
 ```
@@ -52,6 +75,7 @@ app/src/main/
 │   ├── ContactoActivity.java        formulario de contacto
 │   ├── CorreoContacto.java          envío con JavaMail
 │   ├── AcercaDeActivity.java        bio del desarrollador
+│   ├── BaseDatosMascotas.java       tabla mascota en SQLite
 │   ├── Mascota.java / Foto.java     entidades
 │   └── MascotaAdaptador.java / FotoAdaptador.java
 └── res/

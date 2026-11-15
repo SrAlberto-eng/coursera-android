@@ -15,9 +15,11 @@ import java.util.ArrayList;
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
 
     private final ArrayList<Mascota> mascotas;
+    private final BaseDatosMascotas baseDatos;
 
-    public MascotaAdaptador(ArrayList<Mascota> mascotas) {
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, BaseDatosMascotas baseDatos) {
         this.mascotas = mascotas;
+        this.baseDatos = baseDatos;
     }
 
     @NonNull
@@ -39,6 +41,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
         holder.btnHueso.setOnClickListener(v -> {
             mascota.darHueso();
+            baseDatos.guardarHueso(mascota);
             holder.tvRaiting.setText(String.valueOf(mascota.getRaiting()));
         });
     }
