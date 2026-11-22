@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Garita de San Ysidro: muro fronterizo, techo de las casetas y autos en fila -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#CDE7F7"
+        android:pathData="M24,0 H96 A24,24 0 0 1 120,24 V92 H0 V24 A24,24 0 0 1 24,0 Z" />
+    <path
+        android:fillColor="#9AA7B4"
+        android:pathData="M0,54 H120 V92 H0 Z" />
+    <path
+        android:strokeColor="#6C7A89"
+        android:strokeWidth="2"
+        android:pathData="M6,54 V92 M14,54 V92 M22,54 V92 M30,54 V92 M38,54 V92 M46,54 V92 M54,54 V92 M62,54 V92 M70,54 V92 M78,54 V92 M86,54 V92 M94,54 V92 M102,54 V92 M110,54 V92" />
+    <path
+        android:fillColor="#3E7CB1"
+        android:pathData="M8,34 H112 L104,46 H16 Z" />
+    <path
+        android:fillColor="#2B5D88"
+        android:pathData="M18,46 H23 V92 H18 Z M45,46 H50 V92 H45 Z M70,46 H75 V92 H70 Z M97,46 H102 V92 H97 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,24 H72 V34 H48 Z" />
+    <path
+        android:fillColor="#006847"
+        android:pathData="M48,24 H56 V34 H48 Z" />
+    <path
+        android:fillColor="#CE1126"
+        android:pathData="M64,24 H72 V34 H64 Z" />
+    <path
+        android:fillColor="#5B6770"
+        android:pathData="M0,92 H120 V96 A24,24 0 0 1 96,120 H24 A24,24 0 0 1 0,96 Z" />
+    <path
+        android:fillColor="#E63946"
+        android:pathData="M26,80 L29,73 H41 L44,80 H46 V90 H24 V80 Z" />
+    <path
+        android:fillColor="#F4A261"
+        android:pathData="M76,80 L79,73 H91 L94,80 H96 V90 H74 V80 Z" />
+    <path
+        android:fillColor="#BFE6F5"
+        android:pathData="M30,79 L31.5,75 H38.5 L40,79 Z M80,79 L81.5,75 H88.5 L90,79 Z" />
+    <path
+        android:fillColor="#263238"
+        android:pathData="M27,90 A3,3 0 0 0 33,90 Z M37,90 A3,3 0 0 0 43,90 Z M77,90 A3,3 0 0 0 83,90 Z M87,90 A3,3 0 0 0 93,90 Z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:pathData="M60,98 V104 M60,110 V116" />
+</vector>

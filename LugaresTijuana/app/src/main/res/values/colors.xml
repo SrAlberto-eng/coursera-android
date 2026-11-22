@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF2C7DA0</color>
+    <color name="colorPrimaryDark">#FF1F5F7A</color>
+    <color name="colorAccent">#FFE8833A</color>
+    <color name="texto">#FF263238</color>
+    <color name="fondo">#FFF4F8FA</color>
+    <color name="blanco">#FFFFFFFF</color>
+
+    <!-- Color del puntero de cada lugar -->
+    <color name="lugar_revolucion">#FFE8833A</color>
+    <color name="lugar_garita">#FF3E7CB1</color>
+    <color name="lugar_cecut">#FFB9773A</color>
+    <color name="lugar_playas">#FF1B8D93</color>
+</resources>

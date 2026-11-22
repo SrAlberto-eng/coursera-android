@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Playas de Tijuana: faro, mar, sol y el muro que entra al mar -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#FFE0B2"
+        android:pathData="M24,0 H96 A24,24 0 0 1 120,24 V64 H0 V24 A24,24 0 0 1 24,0 Z" />
+    <path
+        android:fillColor="#FFB74D"
+        android:pathData="M64,40 A13,13 0 1 0 90,40 A13,13 0 1 0 64,40 Z" />
+    <path
+        android:fillColor="#4FB3BF"
+        android:pathData="M0,62 H120 V88 H0 Z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M54,70 Q59,67 64,70 Q69,73 74,70 M78,78 Q83,75 88,78 Q93,81 98,78 M8,80 Q13,77 18,80" />
+    <path
+        android:strokeColor="#5D6D7E"
+        android:strokeWidth="2.2"
+        android:pathData="M104,44 V92 M108,44 V92 M112,44 V92 M116,44 V92" />
+    <path
+        android:fillColor="#F2D399"
+        android:pathData="M0,86 H120 V96 A24,24 0 0 1 96,120 H24 A24,24 0 0 1 0,96 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M27,96 L31,40 H41 L45,96 Z" />
+    <path
+        android:fillColor="#E63946"
+        android:pathData="M30.2,52 H41.8 L42.6,62 H29.4 Z M28.6,72 H43.4 L44.2,82 H27.8 Z" />
+    <path
+        android:fillColor="#263238"
+        android:pathData="M29,36 H43 V40 H29 Z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M31,28 H41 V36 H31 Z" />
+    <path
+        android:fillColor="#E63946"
+        android:pathData="M29,28 L36,20 L43,28 Z" />
+    <path
+        android:fillColor="#B98A4A"
+        android:pathData="M24,96 H48 V100 H24 Z" />
+</vector>

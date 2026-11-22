@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Centro Cultural Tijuana: La Bola sobre su base -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#F7E3C4"
+        android:pathData="M24,0 H96 A24,24 0 0 1 120,24 V90 H0 V24 A24,24 0 0 1 24,0 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82,22 A7,7 0 0 1 95,19 A6,6 0 0 1 104,26 H80 A4,4 0 0 1 82,22 Z" />
+    <path
+        android:fillColor="#E9E2D0"
+        android:pathData="M14,78 H106 V90 H14 Z" />
+    <path
+        android:strokeColor="#CFC6AF"
+        android:strokeWidth="1.5"
+        android:pathData="M14,84 H106" />
+    <path
+        android:fillColor="#8C5A2E"
+        android:pathData="M48,72 H72 V80 H48 Z" />
+    <path
+        android:fillColor="#C98A4B"
+        android:pathData="M30,48 A30,30 0 1 0 90,48 A30,30 0 1 0 30,48 Z" />
+    <path
+        android:strokeColor="#A66E36"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M33,38 Q60,44 87,38 M30.5,49 Q60,55 89.5,49 M32,60 Q60,66 88,60 M38,70 Q60,75 82,70 M38,27 Q60,32 82,27" />
+    <path
+        android:strokeColor="#E7B07A"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M40,32 Q46,24 55,21" />
+    <path
+        android:fillColor="#B8A57E"
+        android:pathData="M0,90 H120 V96 A24,24 0 0 1 96,120 H24 A24,24 0 0 1 0,96 Z" />
+    <path
+        android:strokeColor="#9C8A63"
+        android:strokeWidth="2"
+        android:pathData="M44,96 H76 M40,102 H80 M36,108 H84" />
+</vector>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lugares de Tijuana</string>
+    <string name="instrucciones">Elige un lugar para verlo en el mapa</string>
+
+    <string name="lugar_revolucion">Avenida Revolución</string>
+    <string name="lugar_garita">Garita de San Ysidro</string>
+    <string name="lugar_cecut">Centro Cultural Tijuana</string>
+    <string name="lugar_playas">Playas de Tijuana</string>
+
+    <string name="descripcion_revolucion">Arco Monumental y centro histórico</string>
+    <string name="descripcion_garita">El cruce fronterizo más transitado</string>
+    <string name="descripcion_cecut">La Bola y sus museos</string>
+    <string name="descripcion_playas">Malecón, faro y muro fronterizo</string>
+</resources>

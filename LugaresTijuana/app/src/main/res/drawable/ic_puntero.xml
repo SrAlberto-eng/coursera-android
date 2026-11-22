@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Puntero personalizado del mapa. MapaActivity lo pinta con el color del lugar
+     y le dibuja encima la ilustración del lugar en un círculo. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="62dp"
+    android:viewportWidth="48"
+    android:viewportHeight="62">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M24,1 C11.3,1 1,11.3 1,24 C1,41 24,61 24,61 C24,61 47,41 47,24 C47,11.3 36.7,1 24,1 Z" />
+</vector>

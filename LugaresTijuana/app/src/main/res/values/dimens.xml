@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margen">16dp</dimen>
+    <dimen name="espacio_tarjetas">8dp</dimen>
+    <dimen name="icono_toolbar">26dp</dimen>
+</resources>

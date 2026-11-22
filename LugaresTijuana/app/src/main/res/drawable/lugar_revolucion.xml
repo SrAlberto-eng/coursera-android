@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Avenida Revolución: el Arco Monumental entre edificios del centro -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#A8DDF0"
+        android:pathData="M24,0 H96 A24,24 0 0 1 120,24 V92 H0 V24 A24,24 0 0 1 24,0 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,26 A7,7 0 0 1 29,23 A6,6 0 0 1 38,30 H14 A4,4 0 0 1 16,26 Z" />
+    <path
+        android:fillColor="#F4A261"
+        android:pathData="M8,58 H28 V92 H8 Z" />
+    <path
+        android:fillColor="#E76F51"
+        android:pathData="M26,68 H40 V92 H26 Z" />
+    <path
+        android:fillColor="#2A9D8F"
+        android:pathData="M80,62 H96 V92 H80 Z" />
+    <path
+        android:fillColor="#E9C46A"
+        android:pathData="M94,52 H112 V92 H94 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,63 H16 V68 H12 Z M20,63 H24 V68 H20 Z M12,73 H16 V78 H12 Z M20,73 H24 V78 H20 Z M84,67 H88 V72 H84 Z M84,77 H88 V82 H84 Z M98,57 H102 V62 H98 Z M106,57 H110 V62 H106 Z M98,67 H102 V72 H98 Z M106,67 H110 V72 H106 Z" />
+    <path
+        android:strokeColor="#7B8A97"
+        android:strokeWidth="9"
+        android:strokeLineCap="round"
+        android:pathData="M36,92 C40,42 50,22 60,22 C70,22 80,42 84,92" />
+    <path
+        android:strokeColor="#E4E9ED"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M36,92 C40,42 50,22 60,22 C70,22 80,42 84,92" />
+    <path
+        android:strokeColor="#7B8A97"
+        android:strokeWidth="1.5"
+        android:pathData="M55,27 V36 M65,27 V36" />
+    <path
+        android:fillColor="#263238"
+        android:pathData="M51,36 H69 V49 H51 Z" />
+    <path
+        android:fillColor="#4FC3F7"
+        android:pathData="M53,38 H67 V47 H53 Z" />
+    <path
+        android:fillColor="#5B6770"
+        android:pathData="M0,92 H120 V96 A24,24 0 0 1 96,120 H24 A24,24 0 0 1 0,96 Z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:pathData="M12,106 H24 M36,106 H48 M60,106 H72 M84,106 H96" />
+</vector>
