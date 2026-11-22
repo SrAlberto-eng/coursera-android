@@ -49,4 +49,10 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:4.3.1'
     implementation 'com.sun.mail:android-mail:1.6.7'
     implementation 'com.sun.mail:android-activation:1.6.7'
+
+    // Consumo del API de Instagram: Retrofit hace las peticiones y Gson convierte el JSON
+    implementation 'com.squareup.retrofit2:retrofit:3.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:3.0.0'
+    // Descarga y muestra las fotos a partir de su URL
+    implementation 'com.github.bumptech.glide:glide:5.0.5'
 }

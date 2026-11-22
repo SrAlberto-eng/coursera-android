@@ -8,4 +8,5 @@
     <!-- Espacio al final de las listas para que el botón flotante no tape el último elemento -->
     <dimen name="espacio_bajo_fab">88dp</dimen>
     <dimen name="tamano_foto_perfil">96dp</dimen>
+    <dimen name="tamano_foto_usuario">40dp</dimen>
 </resources>

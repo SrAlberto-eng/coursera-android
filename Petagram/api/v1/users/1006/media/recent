@@ -1,0 +1,308 @@
+{
+  "pagination": {},
+  "meta": {
+    "code": 200
+  },
+  "data": [
+    {
+      "id": "1795318800000_1006",
+      "user": {
+        "id": "1006",
+        "full_name": "Toby",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+        "username": "toby"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_1_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_1_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_1.png"
+        }
+      },
+      "created_time": "1795318800",
+      "caption": {
+        "id": "17953188000009",
+        "text": "Carrera en la playa",
+        "created_time": "1795318800",
+        "from": {
+          "id": "1006",
+          "full_name": "Toby",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+          "username": "toby"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 3
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1795031700001_1006",
+      "user": {
+        "id": "1006",
+        "full_name": "Toby",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+        "username": "toby"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_2_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_2_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_2.png"
+        }
+      },
+      "created_time": "1795031700",
+      "caption": {
+        "id": "17950317000019",
+        "text": "Me robé un calcetín",
+        "created_time": "1795031700",
+        "from": {
+          "id": "1006",
+          "full_name": "Toby",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+          "username": "toby"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 10
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794673200002_1006",
+      "user": {
+        "id": "1006",
+        "full_name": "Toby",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+        "username": "toby"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_3_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_3_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_3.png"
+        }
+      },
+      "created_time": "1794673200",
+      "caption": {
+        "id": "17946732000029",
+        "text": "Nuevo récord en el parque",
+        "created_time": "1794673200",
+        "from": {
+          "id": "1006",
+          "full_name": "Toby",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+          "username": "toby"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 4
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794375300003_1006",
+      "user": {
+        "id": "1006",
+        "full_name": "Toby",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+        "username": "toby"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_4_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_4_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_4.png"
+        }
+      },
+      "created_time": "1794375300",
+      "caption": {
+        "id": "17943753000039",
+        "text": "Acomodando mi cama",
+        "created_time": "1794375300",
+        "from": {
+          "id": "1006",
+          "full_name": "Toby",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+          "username": "toby"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 1
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793979900004_1006",
+      "user": {
+        "id": "1006",
+        "full_name": "Toby",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+        "username": "toby"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_5_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_5_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_5.png"
+        }
+      },
+      "created_time": "1793979900",
+      "caption": {
+        "id": "17939799000049",
+        "text": "Buenos días desde el patio",
+        "created_time": "1793979900",
+        "from": {
+          "id": "1006",
+          "full_name": "Toby",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+          "username": "toby"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 7
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793737800005_1006",
+      "user": {
+        "id": "1006",
+        "full_name": "Toby",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+        "username": "toby"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_6_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_6_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_6.png"
+        }
+      },
+      "created_time": "1793737800",
+      "caption": {
+        "id": "17937378000059",
+        "text": "Mi primera foto",
+        "created_time": "1793737800",
+        "from": {
+          "id": "1006",
+          "full_name": "Toby",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+          "username": "toby"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 2
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    }
+  ]
+}

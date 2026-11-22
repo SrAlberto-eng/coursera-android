@@ -13,6 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:importantForAccessibility="no"
+        android:src="@drawable/placeholder_foto"
         app:civ_border_color="@color/colorPrimary"
         app:civ_border_width="3dp"
         tools:src="@drawable/mascota_ronny" />
@@ -27,19 +28,36 @@
         android:textColor="@color/cafe"
         tools:text="Ronny" />
 
+    <TextView
+        android:id="@+id/tv_usuario_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="\@ronny" />
+
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margen_tarjeta"
         android:layout_marginTop="12dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_fotos"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingHorizontal="12dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="@dimen/espacio_bajo_fab" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fotos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/espacio_bajo_fab" />
+
+        <include layout="@layout/estado_carga" />
+
+    </FrameLayout>
 
 </LinearLayout>

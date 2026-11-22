@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +19,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.sralberto.petagram.vista.ConfigurarCuentaActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ViewPager2 viewPager;
+
+    // Si se guardó una cuenta nueva, se abre el perfil para ver sus fotos
+    private final ActivityResultLauncher<Intent> configurarCuenta = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            resultado -> {
+                if (resultado.getResultCode() == RESULT_OK) {
+                    viewPager.setCurrentItem(PaginasAdaptador.PAGINA_PERFIL);
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +55,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configurarPestanas() {
-        ViewPager2 viewPager = findViewById(R.id.view_pager);
+        viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(new PaginasAdaptador(this));
 
         TabLayout tabs = findViewById(R.id.tabs);
         new TabLayoutMediator(tabs, viewPager, (pestana, posicion) -> {
-            if (posicion == PaginasAdaptador.PAGINA_LISTA) {
+            if (posicion == PaginasAdaptador.PAGINA_TIMELINE) {
                 pestana.setIcon(R.drawable.ic_inicio);
+                pestana.setContentDescription(R.string.pestana_timeline);
+            } else if (posicion == PaginasAdaptador.PAGINA_LISTA) {
+                pestana.setIcon(R.drawable.ic_huella);
                 pestana.setContentDescription(R.string.pestana_lista);
             } else {
                 pestana.setIcon(R.drawable.ic_perfil_mascota);
@@ -80,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
         }
         if (id == R.id.action_acerca_de) {
             abrir(AcercaDeActivity.class);
+            return true;
+        }
+        if (id == R.id.action_configurar_cuenta) {
+            configurarCuenta.launch(new Intent(this, ConfigurarCuentaActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

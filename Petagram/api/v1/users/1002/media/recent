@@ -1,0 +1,308 @@
+{
+  "pagination": {},
+  "meta": {
+    "code": 200
+  },
+  "data": [
+    {
+      "id": "1795277700000_1002",
+      "user": {
+        "id": "1002",
+        "full_name": "Ronny",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+        "username": "ronny"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_1_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_1_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_1.png"
+        }
+      },
+      "created_time": "1795277700",
+      "caption": {
+        "id": "17952777000009",
+        "text": "Listo para el paseo de la mañana",
+        "created_time": "1795277700",
+        "from": {
+          "id": "1002",
+          "full_name": "Ronny",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+          "username": "ronny"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 5
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1795052700001_1002",
+      "user": {
+        "id": "1002",
+        "full_name": "Ronny",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+        "username": "ronny"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_2_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_2_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_2.png"
+        }
+      },
+      "created_time": "1795052700",
+      "caption": {
+        "id": "17950527000019",
+        "text": "Esperando a que lleguen de la escuela",
+        "created_time": "1795052700",
+        "from": {
+          "id": "1002",
+          "full_name": "Ronny",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+          "username": "ronny"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 0
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794774000002_1002",
+      "user": {
+        "id": "1002",
+        "full_name": "Ronny",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+        "username": "ronny"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_3_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_3_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_3.png"
+        }
+      },
+      "created_time": "1794774000",
+      "caption": {
+        "id": "17947740000029",
+        "text": "Día de parque en la Morelos",
+        "created_time": "1794774000",
+        "from": {
+          "id": "1002",
+          "full_name": "Ronny",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+          "username": "ronny"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 3
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794420300003_1002",
+      "user": {
+        "id": "1002",
+        "full_name": "Ronny",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+        "username": "ronny"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_4_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_4_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_4.png"
+        }
+      },
+      "created_time": "1794420300",
+      "caption": {
+        "id": "17944203000039",
+        "text": "Me gané un hueso nuevo",
+        "created_time": "1794420300",
+        "from": {
+          "id": "1002",
+          "full_name": "Ronny",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+          "username": "ronny"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 10
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794108600004_1002",
+      "user": {
+        "id": "1002",
+        "full_name": "Ronny",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+        "username": "ronny"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_5_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_5_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_5.png"
+        }
+      },
+      "created_time": "1794108600",
+      "caption": {
+        "id": "17941086000049",
+        "text": "Cansado después de correr",
+        "created_time": "1794108600",
+        "from": {
+          "id": "1002",
+          "full_name": "Ronny",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+          "username": "ronny"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 2
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793752800005_1002",
+      "user": {
+        "id": "1002",
+        "full_name": "Ronny",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+        "username": "ronny"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_6_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_6_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_6.png"
+        }
+      },
+      "created_time": "1793752800",
+      "caption": {
+        "id": "17937528000059",
+        "text": "Foto de perfil nueva",
+        "created_time": "1793752800",
+        "from": {
+          "id": "1002",
+          "full_name": "Ronny",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+          "username": "ronny"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 3
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    }
+  ]
+}

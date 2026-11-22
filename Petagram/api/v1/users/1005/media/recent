@@ -1,0 +1,308 @@
+{
+  "pagination": {},
+  "meta": {
+    "code": 200
+  },
+  "data": [
+    {
+      "id": "1795154400000_1005",
+      "user": {
+        "id": "1005",
+        "full_name": "Kira",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+        "username": "kira"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_1_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_1_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_1.png"
+        }
+      },
+      "created_time": "1795154400",
+      "caption": {
+        "id": "17951544000009",
+        "text": "Cazadora nocturna",
+        "created_time": "1795154400",
+        "from": {
+          "id": "1005",
+          "full_name": "Kira",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+          "username": "kira"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 15
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794871800001_1005",
+      "user": {
+        "id": "1005",
+        "full_name": "Kira",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+        "username": "kira"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_2_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_2_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_2.png"
+        }
+      },
+      "created_time": "1794871800",
+      "caption": {
+        "id": "17948718000019",
+        "text": "El estambre perdió",
+        "created_time": "1794871800",
+        "from": {
+          "id": "1005",
+          "full_name": "Kira",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+          "username": "kira"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 6
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794595500002_1005",
+      "user": {
+        "id": "1005",
+        "full_name": "Kira",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+        "username": "kira"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_3_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_3_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_3.png"
+        }
+      },
+      "created_time": "1794595500",
+      "caption": {
+        "id": "17945955000029",
+        "text": "Lunes de pereza",
+        "created_time": "1794595500",
+        "from": {
+          "id": "1005",
+          "full_name": "Kira",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+          "username": "kira"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 2
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794280500003_1005",
+      "user": {
+        "id": "1005",
+        "full_name": "Kira",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+        "username": "kira"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_4_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_4_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_4.png"
+        }
+      },
+      "created_time": "1794280500",
+      "caption": {
+        "id": "17942805000039",
+        "text": "Pose de modelo",
+        "created_time": "1794280500",
+        "from": {
+          "id": "1005",
+          "full_name": "Kira",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+          "username": "kira"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 8
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793913900004_1005",
+      "user": {
+        "id": "1005",
+        "full_name": "Kira",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+        "username": "kira"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_5_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_5_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_5.png"
+        }
+      },
+      "created_time": "1793913900",
+      "caption": {
+        "id": "17939139000049",
+        "text": "Probando mi cama nueva",
+        "created_time": "1793913900",
+        "from": {
+          "id": "1005",
+          "full_name": "Kira",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+          "username": "kira"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 3
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793556000005_1005",
+      "user": {
+        "id": "1005",
+        "full_name": "Kira",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+        "username": "kira"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_6_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_6_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_6.png"
+        }
+      },
+      "created_time": "1793556000",
+      "caption": {
+        "id": "17935560000059",
+        "text": "Aquí empieza mi cuenta",
+        "created_time": "1793556000",
+        "from": {
+          "id": "1005",
+          "full_name": "Kira",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+          "username": "kira"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 7
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    }
+  ]
+}

@@ -14,5 +14,7 @@
     <color name="dorado">#FFDCBE68</color>
     <!-- Cian muy claro para el fondo de las pantallas -->
     <color name="fondo">#FFEEFBFC</color>
+    <!-- Cian grisáceo mientras carga una foto de internet -->
+    <color name="fondo_foto">#FFD3EBED</color>
     <color name="blanco">#FFFFFFFF</color>
 </resources>

@@ -8,8 +8,25 @@
     <string name="subir_foto">Subir foto</string>
     <string name="subir_foto_pronto">Pronto podrás subir la foto de tu mascota</string>
 
+    <string name="pestana_timeline">Fotos recientes</string>
     <string name="pestana_lista">Lista de mascotas</string>
     <string name="pestana_perfil">Perfil de la mascota</string>
+
+    <string name="formato_usuario">\@%1$s</string>
+    <string name="descripcion_foto_de">Foto de %1$s</string>
+    <string name="error_conexion">No se pudieron cargar las fotos. Revisa tu conexión a internet.</string>
+    <string name="reintentar">Reintentar</string>
+    <string name="perfil_no_encontrado">La cuenta \@%1$s no está en el Sandbox. Elige otra en Configurar cuenta.</string>
+
+    <string name="configurar_cuenta">Configurar cuenta</string>
+    <string name="configurar_cuenta_instrucciones">El perfil muestra las fotos de la cuenta que guardes aquí.</string>
+    <string name="hint_usuario">Escribe tu usuario</string>
+    <string name="ayuda_usuario">Cuentas del Sandbox: catty, ronny, luna, max, kira y toby</string>
+    <string name="guardar_cuenta">Guardar cuenta</string>
+    <string name="error_usuario_vacio">Escribe un usuario</string>
+    <string name="error_usuario_no_encontrado">No hay ninguna cuenta \@%1$s en el Sandbox</string>
+    <string name="error_conexion_cuenta">No se pudo revisar la cuenta. Revisa tu conexión a internet.</string>
+    <string name="cuenta_guardada">Cuenta guardada. El perfil ahora muestra a \@%1$s</string>
 
     <string name="contacto">Contacto</string>
     <string name="contacto_instrucciones">Mándame un comentario sobre Petagram y te contesto a tu correo.</string>
@@ -29,6 +46,6 @@
     <string name="desarrollador_iniciales">JM</string>
     <string name="desarrollador_nombre">Jorge Alberto Méndez Oseguera</string>
     <string name="desarrollador_carrera">Ingeniería en Software y Tecnologías Emergentes · UABC</string>
-    <string name="desarrollador_bio">Soy estudiante de la UABC en Tijuana. Hice Petagram en el curso de desarrollo de aplicaciones Android de Coursera, donde practiqué Material Design, listas con RecyclerView, menús y Fragments.</string>
+    <string name="desarrollador_bio">Soy estudiante de la UABC en Tijuana. Hice Petagram en el curso de desarrollo de aplicaciones Android de Coursera, donde practiqué Material Design, listas con RecyclerView, menús, Fragments, SQLite y el consumo de un API con Retrofit.</string>
     <string name="desarrollador_github">https://github.com/SrAlberto-eng</string>
 </resources>

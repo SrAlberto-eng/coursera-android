@@ -1,0 +1,308 @@
+{
+  "pagination": {},
+  "meta": {
+    "code": 200
+  },
+  "data": [
+    {
+      "id": "1795227000000_1001",
+      "user": {
+        "id": "1001",
+        "full_name": "Catty",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+        "username": "catty"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_1_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_1_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_1.png"
+        }
+      },
+      "created_time": "1795227000",
+      "caption": {
+        "id": "17952270000009",
+        "text": "Domingo de no hacer nada",
+        "created_time": "1795227000",
+        "from": {
+          "id": "1001",
+          "full_name": "Catty",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+          "username": "catty"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 12
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794936300001_1001",
+      "user": {
+        "id": "1001",
+        "full_name": "Catty",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+        "username": "catty"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_2_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_2_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_2.png"
+        }
+      },
+      "created_time": "1794936300",
+      "caption": {
+        "id": "17949363000019",
+        "text": "Encontré la cobija perfecta",
+        "created_time": "1794936300",
+        "from": {
+          "id": "1001",
+          "full_name": "Catty",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+          "username": "catty"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 7
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794634800002_1001",
+      "user": {
+        "id": "1001",
+        "full_name": "Catty",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+        "username": "catty"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_3_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_3_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_3.png"
+        }
+      },
+      "created_time": "1794634800",
+      "caption": {
+        "id": "17946348000029",
+        "text": "Vigilando la ventana",
+        "created_time": "1794634800",
+        "from": {
+          "id": "1001",
+          "full_name": "Catty",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+          "username": "catty"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 3
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794265500003_1001",
+      "user": {
+        "id": "1001",
+        "full_name": "Catty",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+        "username": "catty"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_4_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_4_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_4.png"
+        }
+      },
+      "created_time": "1794265500",
+      "caption": {
+        "id": "17942655000039",
+        "text": "Siesta número tres del día",
+        "created_time": "1794265500",
+        "from": {
+          "id": "1001",
+          "full_name": "Catty",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+          "username": "catty"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 9
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793907000004_1001",
+      "user": {
+        "id": "1001",
+        "full_name": "Catty",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+        "username": "catty"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_5_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_5_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_5.png"
+        }
+      },
+      "created_time": "1793907000",
+      "caption": {
+        "id": "17939070000049",
+        "text": "Día de baño, no me gustó",
+        "created_time": "1793907000",
+        "from": {
+          "id": "1001",
+          "full_name": "Catty",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+          "username": "catty"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 4
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793591400005_1001",
+      "user": {
+        "id": "1001",
+        "full_name": "Catty",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+        "username": "catty"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_6_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_6_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_6.png"
+        }
+      },
+      "created_time": "1793591400",
+      "caption": {
+        "id": "17935914000059",
+        "text": "Primer post en Petagram",
+        "created_time": "1793591400",
+        "from": {
+          "id": "1001",
+          "full_name": "Catty",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+          "username": "catty"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 6
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    }
+  ]
+}

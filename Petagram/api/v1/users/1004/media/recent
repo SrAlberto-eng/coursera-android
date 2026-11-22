@@ -1,0 +1,308 @@
+{
+  "pagination": {},
+  "meta": {
+    "code": 200
+  },
+  "data": [
+    {
+      "id": "1795188600000_1004",
+      "user": {
+        "id": "1004",
+        "full_name": "Max",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+        "username": "max"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_1_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_1_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_1.png"
+        }
+      },
+      "created_time": "1795188600",
+      "caption": {
+        "id": "17951886000009",
+        "text": "Cuidando la casa desde temprano",
+        "created_time": "1795188600",
+        "from": {
+          "id": "1004",
+          "full_name": "Max",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+          "username": "max"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 4
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794975600001_1004",
+      "user": {
+        "id": "1004",
+        "full_name": "Max",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+        "username": "max"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_2_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_2_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_2.png"
+        }
+      },
+      "created_time": "1794975600",
+      "caption": {
+        "id": "17949756000019",
+        "text": "Mi pelota favorita",
+        "created_time": "1794975600",
+        "from": {
+          "id": "1004",
+          "full_name": "Max",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+          "username": "max"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 9
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794704100002_1004",
+      "user": {
+        "id": "1004",
+        "full_name": "Max",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+        "username": "max"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_3_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_3_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_3.png"
+        }
+      },
+      "created_time": "1794704100",
+      "caption": {
+        "id": "17947041000029",
+        "text": "No fui yo, fue el gato",
+        "created_time": "1794704100",
+        "from": {
+          "id": "1004",
+          "full_name": "Max",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+          "username": "max"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 1
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794337800003_1004",
+      "user": {
+        "id": "1004",
+        "full_name": "Max",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+        "username": "max"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_4_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_4_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_4.png"
+        }
+      },
+      "created_time": "1794337800",
+      "caption": {
+        "id": "17943378000039",
+        "text": "Baño de sol",
+        "created_time": "1794337800",
+        "from": {
+          "id": "1004",
+          "full_name": "Max",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+          "username": "max"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 13
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1794019500004_1004",
+      "user": {
+        "id": "1004",
+        "full_name": "Max",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+        "username": "max"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_5_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_5_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_5.png"
+        }
+      },
+      "created_time": "1794019500",
+      "caption": {
+        "id": "17940195000049",
+        "text": "Aprendí a dar la pata",
+        "created_time": "1794019500",
+        "from": {
+          "id": "1004",
+          "full_name": "Max",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+          "username": "max"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 5
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    },
+    {
+      "id": "1793635500005_1004",
+      "user": {
+        "id": "1004",
+        "full_name": "Max",
+        "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+        "username": "max"
+      },
+      "images": {
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_6_150.png"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_6_320.png"
+        },
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_6.png"
+        }
+      },
+      "created_time": "1793635500",
+      "caption": {
+        "id": "17936355000059",
+        "text": "Primer día en Petagram",
+        "created_time": "1793635500",
+        "from": {
+          "id": "1004",
+          "full_name": "Max",
+          "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+          "username": "max"
+        }
+      },
+      "user_has_liked": false,
+      "likes": {
+        "count": 2
+      },
+      "tags": [],
+      "filter": "Normal",
+      "comments": {
+        "count": 0
+      },
+      "type": "image",
+      "location": null,
+      "users_in_photo": []
+    }
+  ]
+}

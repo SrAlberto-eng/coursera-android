@@ -1,0 +1,62 @@
+{
+  "pagination": {},
+  "meta": {
+    "code": 200
+  },
+  "data": [
+    {
+      "id": "1001",
+      "username": "catty",
+      "full_name": "Catty",
+      "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/catty_perfil.png",
+      "bio": "Perrita de departamento. Duermo 16 horas al día.",
+      "website": "",
+      "is_business": false
+    },
+    {
+      "id": "1002",
+      "username": "ronny",
+      "full_name": "Ronny",
+      "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/ronny_perfil.png",
+      "bio": "Perro feliz de Tijuana. Me gustan los huesos y el parque.",
+      "website": "",
+      "is_business": false
+    },
+    {
+      "id": "1003",
+      "username": "luna",
+      "full_name": "Luna",
+      "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/luna_perfil.png",
+      "bio": "Gata curiosa. Paso el día viendo por la ventana.",
+      "website": "",
+      "is_business": false
+    },
+    {
+      "id": "1004",
+      "username": "max",
+      "full_name": "Max",
+      "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/max_perfil.png",
+      "bio": "Perro guardián en entrenamiento.",
+      "website": "",
+      "is_business": false
+    },
+    {
+      "id": "1005",
+      "username": "kira",
+      "full_name": "Kira",
+      "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/kira_perfil.png",
+      "bio": "Gatita juguetona. Persigo todo lo que se mueve.",
+      "website": "",
+      "is_business": false
+    },
+    {
+      "id": "1006",
+      "username": "toby",
+      "full_name": "Toby",
+      "profile_picture": "https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/media/toby_perfil.png",
+      "bio": "Perro atleta. Salgo a correr todas las tardes.",
+      "website": "",
+      "is_business": false
+    }
+  ]
+}
