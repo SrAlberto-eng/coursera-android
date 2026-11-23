@@ -1,6 +1,6 @@
 // Web service de Petagram en Cloudflare Workers.
 //
-// /v1/...             API simulada de Instagram, con las mismas rutas del API v1
+// /v1/...             API simulada de Instagram con las mismas rutas del API v1, incluidos likes y follow
 // /registrar-usuario  guarda el token de FCM de un dispositivo con su cuenta de Instagram
 // /registrar-like     guarda un like y avisa al dueño de la foto con una notificación
 

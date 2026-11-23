@@ -24,6 +24,9 @@ public final class ConstantesRestApi {
     public static final String KEY_BUSQUEDA = "q";
     public static final String KEY_USER_ID = "user-id";
     public static final String KEY_MEDIA_ID = "media-id";
+    public static final String KEY_ACCION = "action";
+    public static final String ACCION_FOLLOW = "follow";
+    public static final String ACCION_UNFOLLOW = "unfollow";
 
     // Usuarios que aceptaron la invitación al Sandbox de la app
     public static final String URL_GET_USUARIOS_SANDBOX = "users/self/follows";
@@ -33,6 +36,8 @@ public final class ConstantesRestApi {
     public static final String URL_GET_MEDIA_RECIENTE_USUARIO = "users/{" + KEY_USER_ID + "}/media/recent";
     // Da like a una foto
     public static final String URL_POST_LIKE = "media/{" + KEY_MEDIA_ID + "}/likes";
+    // Consulta, da o quita el follow a una cuenta
+    public static final String URL_RELACION = "users/{" + KEY_USER_ID + "}/relationship";
 
     // Endpoints propios de Petagram
     public static final String URL_POST_REGISTRAR_USUARIO = "registrar-usuario";
@@ -42,5 +47,13 @@ public final class ConstantesRestApi {
     public static final String KEY_ID_FOTO_INSTAGRAM = "id_foto_instagram";
 
     private ConstantesRestApi() {
+    }
+
+    /**
+     * Token de una cuenta en particular. En el API real cada cuenta tenía su propio access_token.
+     * Follow y unfollow lo necesitan para saber qué cuenta sigue a cuál.
+     */
+    public static String accessTokenDe(String idUsuario) {
+        return ACCESS_TOKEN + "." + idUsuario;
     }
 }

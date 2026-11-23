@@ -18,6 +18,7 @@ import com.sralberto.petagram.R;
 import com.sralberto.petagram.adaptador.FotoAdaptador;
 import com.sralberto.petagram.modelo.CuentaPrincipal;
 import com.sralberto.petagram.modelo.Foto;
+import com.sralberto.petagram.modelo.IFuenteUsuario;
 import com.sralberto.petagram.modelo.UsuarioInstagram;
 import com.sralberto.petagram.presentador.IPerfilPresentador;
 import com.sralberto.petagram.presentador.PerfilPresentador;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 /**
  * Perfil del usuario principal: foto, nombre y cuadrícula con sus fotos de Instagram.
  * El usuario se cambia en el menú, en Configurar cuenta.
+ * UsuarioActivity usa la misma pantalla para mostrar las fotos de otra cuenta.
  */
 public class PerfilMascotaFragment extends Fragment implements IPerfilVista {
 
@@ -35,6 +37,7 @@ public class PerfilMascotaFragment extends Fragment implements IPerfilVista {
     public static final String RECARGAR = "recargar_perfil";
 
     private static final int COLUMNAS = 3;
+    private static final String ARG_USUARIO = "usuario";
 
     private IPerfilPresentador presentador;
     private FotoAdaptador adaptador;
@@ -44,6 +47,15 @@ public class PerfilMascotaFragment extends Fragment implements IPerfilVista {
     private TextView tvError;
     private View progreso;
     private View contenedorError;
+
+    /** Perfil de una cuenta fija, sin importar el usuario principal. */
+    public static PerfilMascotaFragment deUsuario(String username) {
+        Bundle argumentos = new Bundle();
+        argumentos.putString(ARG_USUARIO, username);
+        PerfilMascotaFragment fragment = new PerfilMascotaFragment();
+        fragment.setArguments(argumentos);
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -70,7 +82,9 @@ public class PerfilMascotaFragment extends Fragment implements IPerfilVista {
 
         vista.findViewById(R.id.btn_reintentar).setOnClickListener(v -> presentador.cargarPerfil());
 
-        presentador = new PerfilPresentador(this, new CuentaPrincipal(requireContext()));
+        String usuarioFijo = getArguments() == null ? null : getArguments().getString(ARG_USUARIO);
+        IFuenteUsuario cuenta = usuarioFijo != null ? () -> usuarioFijo : new CuentaPrincipal(requireContext());
+        presentador = new PerfilPresentador(this, cuenta);
         presentador.cargarPerfil();
 
         getParentFragmentManager().setFragmentResultListener(RECARGAR, getViewLifecycleOwner(),

@@ -2,6 +2,7 @@ package com.sralberto.petagram.restapi;
 
 import com.sralberto.petagram.restapi.modelo.LikeResponse;
 import com.sralberto.petagram.restapi.modelo.MediaResponse;
+import com.sralberto.petagram.restapi.modelo.RelacionResponse;
 import com.sralberto.petagram.restapi.modelo.UsuariosResponse;
 
 import retrofit2.Call;
@@ -37,4 +38,18 @@ public interface EndpointsApi {
     Call<LikeResponse> darLike(
             @Path(ConstantesRestApi.KEY_MEDIA_ID) String idFoto,
             @Field(ConstantesRestApi.KEY_ACCESS_TOKEN) String accessToken);
+
+    // Dice si la cuenta del token sigue a idUsuario
+    @GET(ConstantesRestApi.URL_RELACION)
+    Call<RelacionResponse> getRelacion(
+            @Path(ConstantesRestApi.KEY_USER_ID) String idUsuario,
+            @Query(ConstantesRestApi.KEY_ACCESS_TOKEN) String accessToken);
+
+    // accion es ACCION_FOLLOW o ACCION_UNFOLLOW
+    @FormUrlEncoded
+    @POST(ConstantesRestApi.URL_RELACION)
+    Call<RelacionResponse> cambiarRelacion(
+            @Path(ConstantesRestApi.KEY_USER_ID) String idUsuario,
+            @Field(ConstantesRestApi.KEY_ACCESS_TOKEN) String accessToken,
+            @Field(ConstantesRestApi.KEY_ACCION) String accion);
 }

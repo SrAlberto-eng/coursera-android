@@ -17,14 +17,21 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.sralberto.petagram.MainActivity;
 import com.sralberto.petagram.R;
+import com.sralberto.petagram.restapi.ConstantesRestApi;
+import com.sralberto.petagram.restapi.adaptador.RestApiAdaptador;
+import com.sralberto.petagram.restapi.modelo.RelacionResponse;
 
+import java.io.IOException;
 import java.util.Map;
 
+import retrofit2.Response;
+
 /**
- * Recibe los mensajes de Firebase Cloud Messaging cuando la app está abierta.
- * Con la app en segundo plano, Android muestra la notificación por su cuenta
- * y al tocarla abre MainActivity con los datos del mensaje como extras.
- * Esta clase hace lo mismo para que la app se comporte igual en los dos casos.
+ * Recibe los mensajes de Firebase Cloud Messaging.
+ *
+ * El aviso de un like llega como mensaje solo de datos. Así Android siempre llama a onMessageReceived,
+ * aunque la app esté en segundo plano, y la app arma la notificación con sus acciones.
+ * Un mensaje con notificación de Firebase se muestra con título y texto, sin acciones.
  */
 public class PetagramMessagingService extends FirebaseMessagingService {
 
@@ -32,6 +39,15 @@ public class PetagramMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage mensaje) {
+        AvisoLike aviso = AvisoLike.desdeDatos(mensaje.getData(), (int) System.currentTimeMillis());
+        if (aviso != null) {
+            if (aviso.conoceQuienDioLike()) {
+                aviso.setLoSigue(consultarSiLoSigue(aviso));
+            }
+            Notificaciones.mostrarLike(this, aviso);
+            return;
+        }
+
         String titulo = getString(R.string.app_name);
         String texto = "";
 
@@ -45,6 +61,22 @@ public class PetagramMessagingService extends FirebaseMessagingService {
             }
         }
         mostrarNotificacion(titulo, texto, mensaje.getData());
+    }
+
+    // Revisa si la cuenta de este celular ya sigue a la que dio el like, para poner Dar follow o Dar unfollow.
+    // onMessageReceived corre fuera del hilo principal, por eso aquí se puede esperar la respuesta.
+    private boolean consultarSiLoSigue(AvisoLike aviso) {
+        try {
+            Response<RelacionResponse> respuesta = RestApiAdaptador.obtenerEndpoints()
+                    .getRelacion(aviso.getIdQuien(), ConstantesRestApi.accessTokenDe(aviso.getIdDueno()))
+                    .execute();
+            RelacionResponse cuerpo = respuesta.body();
+            return respuesta.isSuccessful() && cuerpo != null && cuerpo.loSigue();
+        } catch (IOException | RuntimeException error) {
+            // Sin respuesta se ofrece Dar follow. Si ya lo seguía, el servidor lo deja igual.
+            Log.w(TAG, "No se pudo consultar el follow", error);
+            return false;
+        }
     }
 
     // Firebase cambia el token cuando reinstalan la app o borran sus datos.

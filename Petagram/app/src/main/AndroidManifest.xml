@@ -63,6 +63,17 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Fotos de la cuenta que dio like. La abre la acción Ver usuario de la notificación. -->
+        <activity
+            android:name=".vista.UsuarioActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Acción Dar follow/unfollow de la notificación. Funciona desde el celular y desde el reloj. -->
+        <receiver
+            android:name=".notificaciones.SeguirReceiver"
+            android:exported="false" />
     </application>
 
 </manifest>

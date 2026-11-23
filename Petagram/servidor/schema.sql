@@ -27,3 +27,11 @@ CREATE TABLE IF NOT EXISTS instagram_like (
     creado TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS instagram_like_por_foto ON instagram_like (id_foto);
+
+-- Quién sigue a quién en la API simulada de Instagram
+CREATE TABLE IF NOT EXISTS instagram_relacion (
+    id_usuario TEXT NOT NULL,
+    id_seguido TEXT NOT NULL,
+    creado TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_usuario, id_seguido)
+);

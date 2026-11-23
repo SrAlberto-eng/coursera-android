@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Acción Ver usuario de la notificación. Huella en blanco para que se vea en el reloj. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7.1,15.6 A4.9,4 0 1,0 16.9,15.6 A4.9,4 0 1,0 7.1,15.6 Z M3.88,11.4 A1.9,2.5 -25 1,0 7.32,9.8 A1.9,2.5 -25 1,0 3.88,11.4 Z M7.32,7.19 A2.1,2.7 -8 1,0 11.48,6.61 A2.1,2.7 -8 1,0 7.32,7.19 Z M12.52,6.61 A2.1,2.7 8 1,0 16.68,7.19 A2.1,2.7 8 1,0 12.52,6.61 Z M16.68,9.8 A1.9,2.5 25 1,0 20.12,11.4 A1.9,2.5 25 1,0 16.68,9.8 Z" />
+</vector>

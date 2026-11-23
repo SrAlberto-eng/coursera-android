@@ -1,6 +1,6 @@
 package com.sralberto.petagram.presentador;
 
-import com.sralberto.petagram.modelo.CuentaPrincipal;
+import com.sralberto.petagram.modelo.IFuenteUsuario;
 import com.sralberto.petagram.modelo.UsuarioInstagram;
 import com.sralberto.petagram.restapi.ConstantesRestApi;
 import com.sralberto.petagram.restapi.EndpointsApi;
@@ -17,7 +17,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Muestra el perfil del usuario principal que se guardó en Configurar cuenta.
+ * Muestra el perfil de una cuenta. Por lo general es el usuario principal que se guardó
+ * en Configurar cuenta. En UsuarioActivity es la cuenta que dio like a una foto.
  *
  * 1. Busca la cuenta con users/search para conocer su id, nombre y foto de perfil.
  * 2. Pide sus fotos a users/{user-id}/media/recent.
@@ -25,16 +26,16 @@ import retrofit2.Response;
 public class PerfilPresentador implements IPerfilPresentador {
 
     private IPerfilVista vista;
-    private final CuentaPrincipal cuenta;
+    private final IFuenteUsuario cuenta;
     private final EndpointsApi endpoints;
     private final List<Call<?>> llamadas = new ArrayList<>();
     private String usuarioCargado;
 
-    public PerfilPresentador(IPerfilVista vista, CuentaPrincipal cuenta) {
+    public PerfilPresentador(IPerfilVista vista, IFuenteUsuario cuenta) {
         this(vista, cuenta, RestApiAdaptador.obtenerEndpoints());
     }
 
-    public PerfilPresentador(IPerfilVista vista, CuentaPrincipal cuenta, EndpointsApi endpoints) {
+    public PerfilPresentador(IPerfilVista vista, IFuenteUsuario cuenta, EndpointsApi endpoints) {
         this.vista = vista;
         this.cuenta = cuenta;
         this.endpoints = endpoints;

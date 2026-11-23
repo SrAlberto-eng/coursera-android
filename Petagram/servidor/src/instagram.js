@@ -8,8 +8,12 @@ const URL_DATOS = "https://raw.githubusercontent.com/SrAlberto-eng/coursera-andr
 
 const RUTAS_FIJAS = new Set(["users/self/follows", "users/search"]);
 const RUTA_MEDIA_RECIENTE = /^users\/(\d+)\/media\/recent$/;
+const RUTA_RELACION = /^users\/(\d+)\/relationship$/;
 // Instagram arma el id de una foto con un número y el id de su dueño, por ejemplo 1795277700000_1002
 const RUTA_LIKES = /^media\/(\d+_(\d+))\/likes$/;
+// En el API real cada access_token pertenece a una cuenta. Follow y unfollow necesitan saber cuál,
+// así que en la copia simulada el token termina con el id de la cuenta, por ejemplo petagram.sandbox.1001
+const TOKEN_DE_CUENTA = /^petagram\.sandbox\.(\d+)$/;
 
 export async function atenderInstagram(request, env, ruta) {
   let parametros;
@@ -23,6 +27,11 @@ export async function atenderInstagram(request, env, ruta) {
   const accessToken = texto(parametros.access_token ?? new URL(request.url).searchParams.get("access_token"));
   if (!accessToken) {
     return errorInstagram("OAuthParameterException", "Missing client_id or access_token URL parameter.", 400);
+  }
+
+  const relacion = ruta.match(RUTA_RELACION);
+  if (relacion && (request.method === "GET" || request.method === "POST")) {
+    return atenderRelacion(env, request.method, relacion[1], accessToken, texto(parametros.action));
   }
 
   if (request.method === "GET") {
@@ -78,6 +87,60 @@ async function darLike(env, idFoto, idDueno) {
   }
   await env.DB.prepare("INSERT INTO instagram_like (id_foto) VALUES (?1)").bind(idFoto).run();
   return responder({ meta: { code: 200 }, data: null });
+}
+
+// GET y POST users/{user-id}/relationship. POST recibe action=follow o action=unfollow.
+async function atenderRelacion(env, metodo, idOtro, accessToken, accion) {
+  const idPropio = accessToken.match(TOKEN_DE_CUENTA)?.[1];
+  if (!idPropio) {
+    return errorInstagram("OAuthAccessTokenException", "The access_token provided is invalid.", 400);
+  }
+  const usuarios = await leerDatos("users/self/follows");
+  if (!usuarios) {
+    return errorDatos();
+  }
+  const ids = new Set(usuarios.data.map((usuario) => usuario.id));
+  if (!ids.has(idPropio) || !ids.has(idOtro)) {
+    return errorInstagram("APINotFoundError", "this user does not exist", 400);
+  }
+
+  if (metodo === "POST") {
+    if (idPropio === idOtro) {
+      return errorInstagram("APIInvalidParametersError", "you cannot follow yourself", 400);
+    }
+    if (accion === "follow") {
+      await env.DB.prepare("INSERT OR IGNORE INTO instagram_relacion (id_usuario, id_seguido) VALUES (?1, ?2)")
+        .bind(idPropio, idOtro)
+        .run();
+    } else if (accion === "unfollow") {
+      await env.DB.prepare("DELETE FROM instagram_relacion WHERE id_usuario = ?1 AND id_seguido = ?2")
+        .bind(idPropio, idOtro)
+        .run();
+    } else {
+      return errorInstagram("APIInvalidParametersError", "action must be follow or unfollow", 400);
+    }
+  }
+
+  const { results } = await env.DB.prepare(
+    `SELECT id_usuario FROM instagram_relacion
+     WHERE (id_usuario = ?1 AND id_seguido = ?2) OR (id_usuario = ?2 AND id_seguido = ?1)`
+  )
+    .bind(idPropio, idOtro)
+    .all();
+  const loSigue = results.some((fila) => fila.id_usuario === idPropio);
+  const meSigue = results.some((fila) => fila.id_usuario === idOtro);
+
+  const data = { outgoing_status: loSigue ? "follows" : "none", target_user_is_private: false };
+  if (metodo === "GET") {
+    data.incoming_status = meSigue ? "followed_by" : "none";
+  }
+  return responder({ meta: { code: 200 }, data });
+}
+
+// Cuenta del Sandbox con ese id. Regresa null si no existe o si no se pudieron leer los datos.
+export async function buscarUsuarioSandbox(id) {
+  const usuarios = await leerDatos("users/self/follows");
+  return usuarios?.data.find((usuario) => usuario.id === id) ?? null;
 }
 
 // GitHub manda los JSON como texto. Cloudflare los guarda 5 minutos para no pedirlos en cada visita.

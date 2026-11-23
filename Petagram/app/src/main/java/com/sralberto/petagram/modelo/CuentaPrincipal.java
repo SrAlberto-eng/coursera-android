@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
  * Guarda el usuario principal de la app, el que se asigna en Configurar cuenta.
  * El perfil muestra las fotos de este usuario.
  */
-public class CuentaPrincipal {
+public class CuentaPrincipal implements IFuenteUsuario {
 
     public static final String USUARIO_POR_DEFECTO = "ronny";
 
@@ -21,6 +21,7 @@ public class CuentaPrincipal {
                 .getSharedPreferences(ARCHIVO, Context.MODE_PRIVATE);
     }
 
+    @Override
     public String obtenerUsuario() {
         return preferencias.getString(CLAVE_USUARIO, USUARIO_POR_DEFECTO);
     }

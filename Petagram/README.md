@@ -11,6 +11,7 @@ Módulos elaborados del curso
 5. **Retrofit y API de Instagram.** Timeline con las fotos recientes de las cuentas del Sandbox, perfil del usuario principal y pantalla para elegirlo. Usa Retrofit, deserializadores de Gson y el patrón Modelo Vista Presentador.
 6. **Notificaciones con Firebase.** Opción Recibir notificaciones que registra el token de FCM del dispositivo en un web service propio.
 7. **Likes con notificación.** Hueso blanco en el timeline para dar like a una foto. El web service registra el like y le avisa al dueño de la foto con una notificación que abre su perfil.
+8. **Android Wear.** La notificación del like tiene las acciones Ver mi perfil, Dar follow o unfollow y Ver usuario. También se ven y funcionan en un reloj con Wear OS.
 
 ## Módulo 2 - Capturas
 
@@ -80,6 +81,7 @@ La URL base es `https://petagram-ws.sralberto.workers.dev/v1/`. En el API real e
 | `GET users/{user-id}/media/recent` | Las fotos recientes de una cuenta con sus likes | Timeline y perfil | `MediaDeserializador` |
 | `GET users/search?q={usuario}` | Las cuentas que coinciden con el usuario buscado | Perfil y Configurar cuenta | `UsuariosDeserializador` |
 | `POST media/{media-id}/likes` | `meta.code` en 200 si el like quedó guardado | Timeline | Ninguno, Gson llena `LikeResponse` |
+| `GET` y `POST users/{user-id}/relationship` | Si la cuenta del token sigue a la otra | Notificación del like | Ninguno, Gson llena `RelacionResponse` |
 
 El timeline pide primero la lista de cuentas y después las fotos de cada una. Cuando llegan todas, las ordena de la más nueva a la más vieja. El perfil busca al usuario principal para conocer su id y luego pide sus fotos. Configurar cuenta usa la misma búsqueda para revisar que la cuenta exista antes de guardarla en SharedPreferences.
 
@@ -173,6 +175,28 @@ Explicación del endpoint en [Petagram_Likes_Endpoint.pdf](docs/Petagram_Likes_E
 
 <img src="docs/likes_notificacion.png" alt="Notificación del like" width="260"> <img src="docs/likes_perfil.png" alt="Perfil que abre la notificación" width="260">
 
+## Notificación con acciones para Android Wear
+
+La notificación de un like tiene tres acciones. En un reloj con Wear OS aparecen como botones debajo de la notificación gracias a `NotificationCompat.WearableExtender`. Las acciones son estas:
+
+1. Ver mi perfil abre la app en la pestaña del perfil de la cuenta del celular.
+2. Dar follow o Dar unfollow sigue o deja de seguir a la cuenta que dio el like sin abrir la app. Lo hace `SeguirReceiver`, y al terminar la notificación cambia a la acción contraria.
+3. Ver usuario abre `UsuarioActivity` con las fotos recientes de la cuenta que dio el like.
+
+Para que las acciones salgan aunque la app esté cerrada, `/registrar-like` manda un mensaje de FCM solo de datos y `PetagramMessagingService` arma la notificación. El servidor sabe qué cuenta dio el like por el celular que lo mandó. Por eso los dos celulares deben haber tocado Recibir notificaciones.
+
+Follow y unfollow usan el endpoint de relaciones de Instagram:
+
+```
+POST https://petagram-ws.sralberto.workers.dev/v1/users/1005/relationship
+access_token=petagram.sandbox.1001&action=follow
+
+200 {"meta":{"code":200},"data":{"outgoing_status":"follows","target_user_is_private":false}}
+400 {"meta":{"error_type":"APIInvalidParametersError","code":400,"error_message":"you cannot follow yourself"}}
+```
+
+En el API real cada cuenta tenía su propio `access_token`. En la copia simulada, el token de este endpoint termina con el id de la cuenta que sigue. Con `GET` en la misma ruta se consulta si ya la sigue, y así la notificación muestra Dar follow o Dar unfollow desde el inicio.
+
 ## Estructura
 
 ```
@@ -195,11 +219,11 @@ Petagram/
     │   ├── BaseDatosMascotas.java       tabla mascota en SQLite
     │   ├── Mascota.java / MascotaAdaptador.java
     │   ├── modelo/                      Foto, UsuarioInstagram y CuentaPrincipal
-    │   ├── vista/                       interfaces de las vistas y ConfigurarCuentaActivity
+    │   ├── vista/                       interfaces de las vistas, ConfigurarCuentaActivity y UsuarioActivity
     │   │   └── fragment/                TimelineFragment y PerfilMascotaFragment
     │   ├── presentador/                 un presentador y su interfaz por pantalla
     │   ├── adaptador/                   TimelineAdaptador y FotoAdaptador
-    │   ├── notificaciones/              servicio de FCM y canal de notificaciones
+    │   ├── notificaciones/              servicio de FCM, notificación con acciones y SeguirReceiver
     │   └── restapi/                     EndpointsApi, ConstantesRestApi y JsonKeys
     │       ├── adaptador/               RestApiAdaptador
     │       ├── modelo/                  respuestas de Instagram y del web service

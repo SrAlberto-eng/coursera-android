@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Acción Dar follow/unfollow de la notificación: una persona con un signo de más. Blanco para el reloj. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,12 A4,4 0 1,0 9,4 A4,4 0 1,0 9,12 Z M9,14 C5.7,14 2,15.7 2,18 L2,20 L16,20 L16,18 C16,15.7 12.3,14 9,14 Z M19,5 L17,5 L17,8 L14,8 L14,10 L17,10 L17,13 L19,13 L19,10 L22,10 L22,8 L19,8 Z" />
+</vector>

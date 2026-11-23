@@ -96,12 +96,14 @@ public class MainActivity extends AppCompatActivity implements INotificacionesVi
         abrirPantallaDeNotificacion(intent, true);
     }
 
-    // La notificación de un like trae pantalla=perfil y abre la pestaña del perfil
+    // La notificación de un like y su acción Ver mi perfil traen pantalla=perfil y abren la pestaña del perfil
     private void abrirPantallaDeNotificacion(Intent intent, boolean yaEstabaAbierta) {
         if (!Notificaciones.PANTALLA_PERFIL.equals(intent.getStringExtra(Notificaciones.EXTRA_PANTALLA))) {
             return;
         }
         intent.removeExtra(Notificaciones.EXTRA_PANTALLA);
+        // La acción Ver mi perfil no quita la notificación por su cuenta
+        Notificaciones.cerrar(this, intent);
         viewPager.setCurrentItem(PaginasAdaptador.PAGINA_PERFIL, false);
         if (yaEstabaAbierta) {
             // El perfil pudo cargarse antes del like. Se recarga para mostrar el hueso nuevo.

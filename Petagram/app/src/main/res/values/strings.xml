@@ -39,6 +39,16 @@
     <string name="copiar_token">Copiar token</string>
     <string name="token_copiado">Token copiado</string>
     <string name="aceptar">Aceptar</string>
+    <string name="like_titulo">Recibiste un hueso</string>
+    <string name="like_texto">Alguien le dio like a una de tus fotos.</string>
+    <string name="like_texto_de">\@%1$s le dio like a una de tus fotos.</string>
+    <string name="accion_ver_mi_perfil">Ver mi perfil</string>
+    <string name="accion_dar_follow">Dar follow</string>
+    <string name="accion_dar_unfollow">Dar unfollow</string>
+    <string name="accion_ver_usuario">Ver usuario</string>
+    <string name="estado_ya_sigues">Ya sigues a \@%1$s.</string>
+    <string name="estado_ya_no_sigues">Dejaste de seguir a \@%1$s.</string>
+    <string name="estado_error_follow">No se pudo cambiar el follow. Revisa tu conexión.</string>
     <string name="like_con_aviso">Le diste un hueso a \@%1$s. Se le envió un aviso a su celular.</string>
     <string name="like_sin_dispositivos">Le diste un hueso a \@%1$s. Esa cuenta no tiene un celular registrado para recibir avisos.</string>
     <string name="like_sin_aviso">Le diste un hueso a \@%1$s, pero no se pudo enviar el aviso.</string>

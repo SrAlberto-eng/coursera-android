@@ -1,6 +1,7 @@
 // Endpoints propios de Petagram.
 
 import { enviarNotificaciones } from "./fcm.js";
+import { buscarUsuarioSandbox } from "./instagram.js";
 import { leerParametros, responder, texto } from "./util.js";
 
 // Guarda el token de FCM de un dispositivo junto con su cuenta de Instagram
@@ -80,15 +81,22 @@ export async function registrarLike(request, env) {
     .all();
   const destinos = results.map((fila) => fila.id_dispositivo);
 
-  const resultados = await enviarNotificaciones(env, destinos, {
-    notification: {
-      title: "Recibiste un hueso",
-      body: "Alguien le dio like a una de tus fotos. Toca para ver tu perfil.",
-    },
-    // La app lee pantalla para abrir el perfil al tocar la notificación
-    data: { pantalla: "perfil", id_foto_instagram: idFoto },
-    android: { priority: "high", notification: { channel_id: "petagram_avisos" } },
-  });
+  // La cuenta que dio el like es la que se registró con el celular que lo mandó
+  const registro = await env.DB.prepare(
+    "SELECT id_usuario_instagram FROM usuario_instagram WHERE id_dispositivo = ?1"
+  )
+    .bind(idDispositivo)
+    .first();
+  const quienDioLike = registro ? await buscarUsuarioSandbox(registro.id_usuario_instagram) : null;
+
+  // Mensaje solo de datos. Así la app siempre arma la notificación, aunque esté en segundo plano,
+  // y le puede poner las acciones de Ver mi perfil, Follow y Ver usuario.
+  const datos = { tipo: "like", pantalla: "perfil", id_foto_instagram: idFoto, id_usuario_instagram: idUsuarioInstagram };
+  if (quienDioLike) {
+    datos.id_usuario_like = quienDioLike.id;
+    datos.username_like = quienDioLike.username;
+  }
+  const resultados = await enviarNotificaciones(env, destinos, { data: datos, android: { priority: "high" } });
 
   // Los tokens que Firebase ya no reconoce se borran para no volver a intentarlo
   const vencidos = destinos.filter((_, i) => resultados[i] === "token_vencido");
@@ -99,6 +107,7 @@ export async function registrarLike(request, env) {
 
   return responder({
     ...like,
+    id_usuario_like: quienDioLike?.id ?? null,
     dispositivos: destinos.length,
     notificaciones_enviadas: resultados.filter((resultado) => resultado === "enviada").length,
   });
