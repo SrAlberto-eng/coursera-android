@@ -1,10 +1,14 @@
 package com.sralberto.petagram.restapi;
 
+import com.sralberto.petagram.restapi.modelo.LikeResponse;
 import com.sralberto.petagram.restapi.modelo.MediaResponse;
 import com.sralberto.petagram.restapi.modelo.UsuariosResponse;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -26,4 +30,11 @@ public interface EndpointsApi {
     Call<MediaResponse> getMediaReciente(
             @Path(ConstantesRestApi.KEY_USER_ID) String idUsuario,
             @Query(ConstantesRestApi.KEY_ACCESS_TOKEN) String accessToken);
+
+    // Instagram pedía el access_token en el cuerpo del POST
+    @FormUrlEncoded
+    @POST(ConstantesRestApi.URL_POST_LIKE)
+    Call<LikeResponse> darLike(
+            @Path(ConstantesRestApi.KEY_MEDIA_ID) String idFoto,
+            @Field(ConstantesRestApi.KEY_ACCESS_TOKEN) String accessToken);
 }

@@ -31,6 +31,9 @@ import java.util.ArrayList;
  */
 public class PerfilMascotaFragment extends Fragment implements IPerfilVista {
 
+    /** MainActivity manda este resultado cuando se toca una notificación de like con la app abierta. */
+    public static final String RECARGAR = "recargar_perfil";
+
     private static final int COLUMNAS = 3;
 
     private IPerfilPresentador presentador;
@@ -69,6 +72,9 @@ public class PerfilMascotaFragment extends Fragment implements IPerfilVista {
 
         presentador = new PerfilPresentador(this, new CuentaPrincipal(requireContext()));
         presentador.cargarPerfil();
+
+        getParentFragmentManager().setFragmentResultListener(RECARGAR, getViewLifecycleOwner(),
+                (clave, datos) -> presentador.cargarPerfil());
     }
 
     @Override

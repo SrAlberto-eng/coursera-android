@@ -37,6 +37,7 @@ import com.sralberto.petagram.presentador.INotificacionesPresentador;
 import com.sralberto.petagram.presentador.NotificacionesPresentador;
 import com.sralberto.petagram.vista.ConfigurarCuentaActivity;
 import com.sralberto.petagram.vista.INotificacionesVista;
+import com.sralberto.petagram.vista.fragment.PerfilMascotaFragment;
 
 public class MainActivity extends AppCompatActivity implements INotificacionesVista {
 
@@ -80,6 +81,32 @@ public class MainActivity extends AppCompatActivity implements INotificacionesVi
 
         Notificaciones.crearCanal(this);
         presentadorNotificaciones = new NotificacionesPresentador(this, new CuentaPrincipal(this));
+
+        // Al girar la pantalla el intent es el mismo y no se debe volver a mover de pestaña
+        if (savedInstanceState == null) {
+            abrirPantallaDeNotificacion(getIntent(), false);
+        }
+    }
+
+    // La app ya estaba abierta y se tocó una notificación
+    @Override
+    public void onNewIntent(@NonNull Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        abrirPantallaDeNotificacion(intent, true);
+    }
+
+    // La notificación de un like trae pantalla=perfil y abre la pestaña del perfil
+    private void abrirPantallaDeNotificacion(Intent intent, boolean yaEstabaAbierta) {
+        if (!Notificaciones.PANTALLA_PERFIL.equals(intent.getStringExtra(Notificaciones.EXTRA_PANTALLA))) {
+            return;
+        }
+        intent.removeExtra(Notificaciones.EXTRA_PANTALLA);
+        viewPager.setCurrentItem(PaginasAdaptador.PAGINA_PERFIL, false);
+        if (yaEstabaAbierta) {
+            // El perfil pudo cargarse antes del like. Se recarga para mostrar el hueso nuevo.
+            getSupportFragmentManager().setFragmentResult(PerfilMascotaFragment.RECARGAR, new Bundle());
+        }
     }
 
     @Override

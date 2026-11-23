@@ -11,7 +11,7 @@ public class Foto {
     private final String urlFoto;
     private final String urlMiniatura;
     private final String texto;
-    private final int likes;
+    private int likes;
     // Segundos desde 1970, como el created_time de Instagram
     private final long creadaEn;
 
@@ -50,6 +50,11 @@ public class Foto {
 
     public int getLikes() {
         return likes;
+    }
+
+    /** Se llama cuando Instagram confirma el like que se dio desde la app. */
+    public void sumarLike() {
+        likes++;
     }
 
     public long getCreadaEn() {

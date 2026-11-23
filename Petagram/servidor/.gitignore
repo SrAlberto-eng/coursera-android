@@ -1,2 +1,5 @@
 node_modules/
 .wrangler/
+# Secretos para pruebas locales y llaves de Firebase
+.dev.vars*
+*firebase-adminsdk*.json

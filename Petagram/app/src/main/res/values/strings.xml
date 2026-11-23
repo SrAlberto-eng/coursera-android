@@ -39,6 +39,10 @@
     <string name="copiar_token">Copiar token</string>
     <string name="token_copiado">Token copiado</string>
     <string name="aceptar">Aceptar</string>
+    <string name="like_con_aviso">Le diste un hueso a \@%1$s. Se le envió un aviso a su celular.</string>
+    <string name="like_sin_dispositivos">Le diste un hueso a \@%1$s. Esa cuenta no tiene un celular registrado para recibir avisos.</string>
+    <string name="like_sin_aviso">Le diste un hueso a \@%1$s, pero no se pudo enviar el aviso.</string>
+    <string name="error_like">No se pudo dar el hueso. Revisa tu conexión.</string>
     <string name="firebase_sin_configurar">Firebase no está configurado. Agrega google-services.json en la carpeta app y vuelve a compilar.</string>
     <string name="error_token">No se pudo obtener el token de Firebase. El dispositivo necesita Google Play Services y conexión a internet.</string>
     <string name="error_servidor">El servidor no guardó el registro. Inténtalo otra vez.</string>

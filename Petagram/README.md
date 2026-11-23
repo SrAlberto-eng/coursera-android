@@ -10,6 +10,7 @@ Módulos elaborados del curso
 4. **Módulo 8.** Base de datos. Las 5 favoritas se guardan en SQLite y cambian cada vez que le das un hueso a una mascota.
 5. **Retrofit y API de Instagram.** Timeline con las fotos recientes de las cuentas del Sandbox, perfil del usuario principal y pantalla para elegirlo. Usa Retrofit, deserializadores de Gson y el patrón Modelo Vista Presentador.
 6. **Notificaciones con Firebase.** Opción Recibir notificaciones que registra el token de FCM del dispositivo en un web service propio.
+7. **Likes con notificación.** Hueso blanco en el timeline para dar like a una foto. El web service registra el like y le avisa al dueño de la foto con una notificación que abre su perfil.
 
 ## Módulo 2 - Capturas
 
@@ -67,17 +68,18 @@ Para saber cuáles son las más recientes se usa el `rowid`, un número que SQLi
 
 El curso pide consumir el API v1 de Instagram en modo Sandbox. Ese API ya no existe. Meta lo cerró en 2020 y su reemplazo para cuentas personales, el Basic Display API, dejó de funcionar el 4 de diciembre de 2024. El API que queda solo da acceso a cuentas profesionales, pide un token que caduca y no deja leer las fotos de otras cuentas.
 
-Por eso Petagram consume una copia simulada del API que vive en la carpeta [`api/`](api/) de este repo. La copia respeta las rutas y el formato JSON del API v1, y Retrofit la pide por internet desde `raw.githubusercontent.com`. Esto significa que el proyecto corre sin tokens ni cuentas de desarrollador. Las cuentas del Sandbox son las seis mascotas de la app: catty, ronny, luna, max, kira y toby.
+Por eso Petagram consume una copia simulada del API que vive en la carpeta [`api/`](api/) de este repo. La copia respeta las rutas y el formato JSON del API v1. Retrofit la pide al web service de Petagram en la ruta `/v1`, que lee esos JSON y les suma los likes que se dan desde la app. Esto significa que el proyecto corre sin tokens ni cuentas de desarrollador. Las cuentas del Sandbox son las seis mascotas de la app: catty, ronny, luna, max, kira y toby.
 
 ### Endpoints
 
-La URL base es `https://raw.githubusercontent.com/SrAlberto-eng/coursera-android/main/Petagram/api/v1/`. En el API real era `https://api.instagram.com/v1/`. Todas las peticiones mandan el parámetro `access_token`, como lo pedía Instagram.
+La URL base es `https://petagram-ws.sralberto.workers.dev/v1/`. En el API real era `https://api.instagram.com/v1/`. Todas las peticiones mandan el parámetro `access_token`, como lo pedía Instagram.
 
 | Endpoint | Qué regresa | Dónde se usa | Deserializador |
 |---|---|---|---|
 | `GET users/self/follows` | Las cuentas que aceptaron la invitación al Sandbox | Timeline | `UsuariosDeserializador` |
 | `GET users/{user-id}/media/recent` | Las fotos recientes de una cuenta con sus likes | Timeline y perfil | `MediaDeserializador` |
 | `GET users/search?q={usuario}` | Las cuentas que coinciden con el usuario buscado | Perfil y Configurar cuenta | `UsuariosDeserializador` |
+| `POST media/{media-id}/likes` | `meta.code` en 200 si el like quedó guardado | Timeline | Ninguno, Gson llena `LikeResponse` |
 
 El timeline pide primero la lista de cuentas y después las fotos de cada una. Cuando llegan todas, las ordena de la más nueva a la más vieja. El perfil busca al usuario principal para conocer su id y luego pide sus fotos. Configurar cuenta usa la misma búsqueda para revisar que la cuenta exista antes de guardarla en SharedPreferences.
 
@@ -142,6 +144,35 @@ Explicación del endpoint en [Petagram_Notificaciones_Endpoint.pdf](docs/Petagra
 
 <img src="docs/notificaciones_registro.png" alt="Registro del dispositivo" width="260">
 
+## Likes con notificación
+
+Cada foto del timeline tiene un hueso blanco. Al tocarlo, la app hace tres pasos.
+
+1. Da el like en Instagram con `POST media/{media-id}/likes`.
+2. Pide el token de FCM del celular.
+3. Manda el like a `POST /registrar-like`. El web service lo guarda y le manda una notificación a cada celular registrado con la cuenta dueña de la foto.
+
+Al tocar la notificación, la app abre la pestaña del perfil y lo recarga para mostrar el hueso nuevo.
+
+```
+POST https://petagram-ws.sralberto.workers.dev/registrar-like
+id_foto_instagram=1795277700000_1002&id_usuario_instagram=1002&id_dispositivo=<token de FCM>
+
+200 {"id":1,"id_foto_instagram":"1795277700000_1002","id_usuario_instagram":"1002","id_dispositivo":"<token de FCM>","dispositivos":1,"notificaciones_enviadas":1}
+400 {"error":"Faltan id_foto_instagram, id_usuario_instagram o id_dispositivo"}
+400 {"error":"La foto no pertenece a id_usuario_instagram"}
+```
+
+`id_usuario_instagram` es el dueño de la foto e `id_dispositivo` es el celular que dio el like. El like queda en la tabla `like_foto`. Para mandar la notificación, el web service usa el API HTTP v1 de FCM con una cuenta de servicio de Firebase. Esa llave es un secreto de Cloudflare y no está en el repositorio. Se sube una sola vez antes de publicar. Firebase solo entrega la notificación si la app del celular se compiló con el `google-services.json` del mismo proyecto que la cuenta de servicio.
+
+```
+Get-Content <llave de la cuenta de servicio>.json -Raw | npx wrangler secret put FCM_CUENTA_SERVICIO
+```
+
+Explicación del endpoint en [Petagram_Likes_Endpoint.pdf](docs/Petagram_Likes_Endpoint.pdf).
+
+<img src="docs/likes_notificacion.png" alt="Notificación del like" width="260"> <img src="docs/likes_perfil.png" alt="Perfil que abre la notificación" width="260">
+
 ## Estructura
 
 ```
@@ -171,7 +202,7 @@ Petagram/
     │   ├── notificaciones/              servicio de FCM y canal de notificaciones
     │   └── restapi/                     EndpointsApi, ConstantesRestApi y JsonKeys
     │       ├── adaptador/               RestApiAdaptador
-    │       ├── modelo/                  MediaResponse y UsuariosResponse
+    │       ├── modelo/                  respuestas de Instagram y del web service
     │       └── deserializador/          MediaDeserializador y UsuariosDeserializador
     └── res/
         ├── drawable/            mascotas, huesos, huella, estrella, cámara, íconos de pestañas

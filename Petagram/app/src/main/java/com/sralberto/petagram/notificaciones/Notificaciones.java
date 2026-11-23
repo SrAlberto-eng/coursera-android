@@ -11,6 +11,10 @@ import com.sralberto.petagram.R;
  */
 public final class Notificaciones {
 
+    // El servidor manda pantalla=perfil en los datos de la notificación de un like
+    public static final String EXTRA_PANTALLA = "pantalla";
+    public static final String PANTALLA_PERFIL = "perfil";
+
     private Notificaciones() {
     }
 

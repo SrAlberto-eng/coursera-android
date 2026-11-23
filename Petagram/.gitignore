@@ -3,6 +3,7 @@
 .kotlin/
 /local.properties
 /app/google-services.json
+*firebase-adminsdk*.json
 /.idea/
 .DS_Store
 /build/
