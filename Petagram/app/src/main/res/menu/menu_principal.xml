@@ -23,4 +23,9 @@
         android:id="@+id/action_configurar_cuenta"
         android:title="@string/configurar_cuenta"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_recibir_notificaciones"
+        android:title="@string/recibir_notificaciones"
+        app:showAsAction="never" />
 </menu>

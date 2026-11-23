@@ -28,6 +28,23 @@
     <string name="error_conexion_cuenta">No se pudo revisar la cuenta. Revisa tu conexión a internet.</string>
     <string name="cuenta_guardada">Cuenta guardada. El perfil ahora muestra a \@%1$s</string>
 
+    <string name="recibir_notificaciones">Recibir notificaciones</string>
+    <string name="id_canal_notificaciones" translatable="false">petagram_avisos</string>
+    <string name="canal_notificaciones">Avisos de Petagram</string>
+    <string name="registrando_dispositivo">Registrando este dispositivo…</string>
+    <string name="notificaciones_activadas">Notificaciones activadas</string>
+    <string name="registro_exitoso">Este dispositivo quedó registrado con la cuenta \@%1$s.</string>
+    <string name="notificaciones_desactivadas">Las notificaciones de Petagram están desactivadas. Actívalas en los ajustes de Android para verlas.</string>
+    <string name="token_del_dispositivo">Token del dispositivo</string>
+    <string name="copiar_token">Copiar token</string>
+    <string name="token_copiado">Token copiado</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="firebase_sin_configurar">Firebase no está configurado. Agrega google-services.json en la carpeta app y vuelve a compilar.</string>
+    <string name="error_token">No se pudo obtener el token de Firebase. El dispositivo necesita Google Play Services y conexión a internet.</string>
+    <string name="error_servidor">El servidor no guardó el registro. Inténtalo otra vez.</string>
+    <string name="error_conexion_registro">No se pudo registrar el dispositivo. Revisa tu conexión a internet.</string>
+    <string name="error_registro_usuario">La cuenta \@%1$s no está en el Sandbox. Elige otra en Configurar cuenta.</string>
+
     <string name="contacto">Contacto</string>
     <string name="contacto_instrucciones">Mándame un comentario sobre Petagram y te contesto a tu correo.</string>
     <string name="hint_nombre">Nombre</string>

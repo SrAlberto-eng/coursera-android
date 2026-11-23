@@ -9,6 +9,7 @@ Módulos elaborados del curso
 3. **Módulo 6.** Menús y Fragments. Pestañas con ViewPager, perfil de la mascota, formulario de Contacto que manda correo con JavaMail y pantalla de Acerca de.
 4. **Módulo 8.** Base de datos. Las 5 favoritas se guardan en SQLite y cambian cada vez que le das un hueso a una mascota.
 5. **Retrofit y API de Instagram.** Timeline con las fotos recientes de las cuentas del Sandbox, perfil del usuario principal y pantalla para elegirlo. Usa Retrofit, deserializadores de Gson y el patrón Modelo Vista Presentador.
+6. **Notificaciones con Firebase.** Opción Recibir notificaciones que registra el token de FCM del dispositivo en un web service propio.
 
 ## Módulo 2 - Capturas
 
@@ -109,6 +110,38 @@ Cuando la vista se destruye, el presentador cancela las peticiones pendientes pa
 |---|---|---|---|
 | ![Timeline](docs/retrofit_timeline.png) | ![Perfil](docs/retrofit_perfil.png) | ![Menú](docs/retrofit_menu.png) | ![Configurar cuenta](docs/retrofit_configurar.png) |
 
+## Notificaciones con Firebase
+
+La opción **Recibir notificaciones** del menú pide el token del dispositivo a Firebase Cloud Messaging y lo manda, junto con el id de Instagram del usuario principal, al web service.
+
+El web service está en [`servidor/`](servidor/). Corre en Cloudflare Workers y guarda los datos en una base D1, porque Heroku ya no tiene plan gratis.
+
+`google-services.json` no está en el repositorio para no publicar las credenciales de Firebase. Para recibir notificaciones, registra el paquete `com.sralberto.petagram` en un proyecto de Firebase y copia su `google-services.json` en `app/`. Sin ese archivo la app compila y la opción avisa que falta configurar Firebase.
+
+```
+POST https://petagram-ws.sralberto.workers.dev/registrar-usuario
+id_dispositivo=<token de FCM>&id_usuario_instagram=1002
+
+200 {"id":1,"id_dispositivo":"<token de FCM>","id_usuario_instagram":"1002"}
+400 {"error":"Faltan id_dispositivo o id_usuario_instagram"}
+```
+
+Tabla `usuario_instagram`: `id`, `id_dispositivo` único, `id_usuario_instagram`, `creado` y `actualizado`. Si un dispositivo se registra otra vez, se actualiza su usuario.
+
+Para publicarlo:
+
+```
+cd servidor
+npx wrangler login
+npx wrangler d1 create petagram
+npx wrangler d1 execute petagram --remote --file schema.sql
+npx wrangler deploy
+```
+
+Explicación del endpoint en [Petagram_Notificaciones_Endpoint.pdf](docs/Petagram_Notificaciones_Endpoint.pdf).
+
+<img src="docs/notificaciones_registro.png" alt="Registro del dispositivo" width="260">
+
 ## Estructura
 
 ```
@@ -117,6 +150,7 @@ Petagram/
 │   ├── v1/users/...                 respuestas JSON de cada endpoint
 │   ├── media/                       fotos y fotos de perfil
 │   └── generar_api.py               script que genera los JSON y las fotos
+├── servidor/                        web service en Cloudflare Workers con D1
 └── app/src/main/
     ├── AndroidManifest.xml
     ├── java/com/sralberto/petagram/
@@ -134,6 +168,7 @@ Petagram/
     │   │   └── fragment/                TimelineFragment y PerfilMascotaFragment
     │   ├── presentador/                 un presentador y su interfaz por pantalla
     │   ├── adaptador/                   TimelineAdaptador y FotoAdaptador
+    │   ├── notificaciones/              servicio de FCM y canal de notificaciones
     │   └── restapi/                     EndpointsApi, ConstantesRestApi y JsonKeys
     │       ├── adaptador/               RestApiAdaptador
     │       ├── modelo/                  MediaResponse y UsuariosResponse

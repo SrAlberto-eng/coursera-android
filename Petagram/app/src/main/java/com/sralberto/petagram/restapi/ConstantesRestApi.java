@@ -28,6 +28,12 @@ public final class ConstantesRestApi {
     // Fotos recientes de una cuenta
     public static final String URL_GET_MEDIA_RECIENTE_USUARIO = "users/{" + KEY_USER_ID + "}/media/recent";
 
+    // Web service propio en Cloudflare Workers. Su código está en Petagram/servidor.
+    public static final String ROOT_URL_SERVIDOR = "https://petagram-ws.sralberto.workers.dev/";
+    public static final String URL_POST_REGISTRAR_USUARIO = "registrar-usuario";
+    public static final String KEY_ID_DISPOSITIVO = "id_dispositivo";
+    public static final String KEY_ID_USUARIO_INSTAGRAM = "id_usuario_instagram";
+
     private ConstantesRestApi() {
     }
 }

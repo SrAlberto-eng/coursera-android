@@ -1,29 +1,48 @@
 package com.sralberto.petagram;
 
+import android.Manifest;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.FirebaseApp;
+import com.sralberto.petagram.modelo.CuentaPrincipal;
+import com.sralberto.petagram.modelo.UsuarioInstagram;
+import com.sralberto.petagram.notificaciones.Notificaciones;
+import com.sralberto.petagram.presentador.INotificacionesPresentador;
+import com.sralberto.petagram.presentador.NotificacionesPresentador;
 import com.sralberto.petagram.vista.ConfigurarCuentaActivity;
+import com.sralberto.petagram.vista.INotificacionesVista;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements INotificacionesVista {
 
     private ViewPager2 viewPager;
+    private INotificacionesPresentador presentadorNotificaciones;
+    private Snackbar avisoRegistrando;
 
     // Si se guardó una cuenta nueva, se abre el perfil para ver sus fotos
     private final ActivityResultLauncher<Intent> configurarCuenta = registerForActivityResult(
@@ -33,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
                     viewPager.setCurrentItem(PaginasAdaptador.PAGINA_PERFIL);
                 }
             });
+
+    // Android 13 o mayor pide permiso para mostrar notificaciones.
+    // El token se registra aunque lo nieguen. El aviso final dice cómo activarlas.
+    private final ActivityResultLauncher<String> permisoNotificaciones = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(),
+            concedido -> presentadorNotificaciones.registrarDispositivo());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +77,15 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fabCamara = findViewById(R.id.fab_camara);
         fabCamara.setOnClickListener(v ->
                 Snackbar.make(v, R.string.subir_foto_pronto, Snackbar.LENGTH_SHORT).show());
+
+        Notificaciones.crearCanal(this);
+        presentadorNotificaciones = new NotificacionesPresentador(this, new CuentaPrincipal(this));
+    }
+
+    @Override
+    protected void onDestroy() {
+        presentadorNotificaciones.detener();
+        super.onDestroy();
     }
 
     private void configurarPestanas() {
@@ -103,10 +137,91 @@ public class MainActivity extends AppCompatActivity {
             configurarCuenta.launch(new Intent(this, ConfigurarCuentaActivity.class));
             return true;
         }
+        if (id == R.id.action_recibir_notificaciones) {
+            recibirNotificaciones();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void recibirNotificaciones() {
+        if (FirebaseApp.getApps(this).isEmpty()) {
+            mostrarError(R.string.firebase_sin_configurar);
+            return;
+        }
+        boolean pidePermiso = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED;
+        if (pidePermiso) {
+            permisoNotificaciones.launch(Manifest.permission.POST_NOTIFICATIONS);
+        } else {
+            presentadorNotificaciones.registrarDispositivo();
+        }
     }
 
     private void abrir(Class<?> pantalla) {
         startActivity(new Intent(this, pantalla));
+    }
+
+    @Override
+    public void mostrarRegistrando(boolean registrando) {
+        if (registrando) {
+            avisoRegistrando = Snackbar.make(viewPager, R.string.registrando_dispositivo,
+                    Snackbar.LENGTH_INDEFINITE);
+            avisoRegistrando.show();
+        } else if (avisoRegistrando != null) {
+            avisoRegistrando.dismiss();
+            avisoRegistrando = null;
+        }
+    }
+
+    @Override
+    public void mostrarRegistroExitoso(UsuarioInstagram usuario, String token) {
+        StringBuilder mensaje = new StringBuilder(
+                getString(R.string.registro_exitoso, usuario.getUsername()));
+        if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+            mensaje.append("\n\n").append(getString(R.string.notificaciones_desactivadas));
+        }
+        mensaje.append("\n\n").append(getString(R.string.token_del_dispositivo)).append('\n').append(token);
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.notificaciones_activadas)
+                .setMessage(mensaje)
+                .setPositiveButton(R.string.aceptar, null)
+                .setNeutralButton(R.string.copiar_token, (dialogo, boton) -> copiarToken(token))
+                .show();
+    }
+
+    private void copiarToken(String token) {
+        ClipboardManager portapapeles = ContextCompat.getSystemService(this, ClipboardManager.class);
+        if (portapapeles != null) {
+            portapapeles.setPrimaryClip(ClipData.newPlainText(getString(R.string.token_del_dispositivo), token));
+            Toast.makeText(this, R.string.token_copiado, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void mostrarUsuarioNoEncontrado(String username) {
+        Snackbar.make(viewPager, getString(R.string.error_registro_usuario, username),
+                Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void mostrarErrorToken() {
+        mostrarError(R.string.error_token);
+    }
+
+    @Override
+    public void mostrarErrorServidor() {
+        mostrarError(R.string.error_servidor);
+    }
+
+    @Override
+    public void mostrarErrorDeConexion() {
+        mostrarError(R.string.error_conexion_registro);
+    }
+
+    private void mostrarError(@StringRes int mensaje) {
+        Snackbar.make(viewPager, mensaje, Snackbar.LENGTH_LONG).show();
     }
 }

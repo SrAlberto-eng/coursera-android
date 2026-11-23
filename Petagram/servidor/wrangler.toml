@@ -1,0 +1,9 @@
+name = "petagram-ws"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "petagram"
+# Lo regresa el comando: npx wrangler d1 create petagram
+database_id = "02024e73-a451-42ff-9811-257b1c0ee569"
