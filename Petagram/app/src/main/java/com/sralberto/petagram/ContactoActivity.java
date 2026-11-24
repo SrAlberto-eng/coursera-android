@@ -1,6 +1,7 @@
 package com.sralberto.petagram;
 
 import android.os.Bundle;
+import android.transition.TransitionInflater;
 import android.util.Log;
 import android.util.Patterns;
 import android.widget.Button;
@@ -33,6 +34,9 @@ public class ContactoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Transición en XML, en res/transition/deslizar_derecha.xml
+        getWindow().setEnterTransition(
+                TransitionInflater.from(this).inflateTransition(R.transition.deslizar_derecha));
         setContentView(R.layout.activity_contacto);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -85,7 +89,7 @@ public class ContactoActivity extends AppCompatActivity {
 
     private void comentarioEnviado() {
         Toast.makeText(this, R.string.comentario_enviado, Toast.LENGTH_LONG).show();
-        finish();
+        supportFinishAfterTransition();
     }
 
     private void errorAlEnviar() {
@@ -112,5 +116,12 @@ public class ContactoActivity extends AppCompatActivity {
 
     private static String texto(TextInputEditText entrada) {
         return entrada.getText() == null ? "" : entrada.getText().toString().trim();
+    }
+
+    // La flecha de regresar cierra la pantalla con su transición de salida, igual que el botón de atrás
+    @Override
+    public boolean onSupportNavigateUp() {
+        supportFinishAfterTransition();
+        return true;
     }
 }

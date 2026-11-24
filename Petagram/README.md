@@ -12,6 +12,7 @@ Módulos elaborados del curso
 6. **Notificaciones con Firebase.** Opción Recibir notificaciones que registra el token de FCM del dispositivo en un web service propio.
 7. **Likes con notificación.** Hueso blanco en el timeline para dar like a una foto. El web service registra el like y le avisa al dueño de la foto con una notificación que abre su perfil.
 8. **Android Wear.** La notificación del like tiene las acciones Ver mi perfil, Dar follow o unfollow y Ver usuario. También se ven y funcionan en un reloj con Wear OS.
+9. **Transiciones.** Cada cambio de pantalla tiene una transición distinta. Unas están hechas en XML y otras en Java.
 
 ## Módulo 2 - Capturas
 
@@ -197,6 +198,20 @@ access_token=petagram.sandbox.1001&action=follow
 
 En el API real cada cuenta tenía su propio `access_token`. En la copia simulada, el token de este endpoint termina con el id de la cuenta que sigue. Con `GET` en la misma ruta se consulta si ya la sigue, y así la notificación muestra Dar follow o Dar unfollow desde el inicio.
 
+## Transiciones
+
+Cada pantalla que se abre desde MainActivity define su transición de entrada. Al regresar, Android la reproduce al revés. MainActivity abre las pantallas con `ActivityOptionsCompat.makeSceneTransitionAnimation`, porque sin esas opciones Android usa su animación normal.
+
+| Cambio de pantalla | Transición | Hecha en |
+|---|---|---|
+| Estrella a Favoritas | `Explode`. Las tarjetas salen desde el centro | Java, `Transiciones.explotar()` |
+| Menú a Contacto | `Slide` desde la orilla derecha | XML, `res/transition/deslizar_derecha.xml` cargado con `TransitionInflater` |
+| Menú a Acerca de | `Slide` desde abajo junto con `Fade` | XML, `res/transition/aparecer_desde_abajo.xml` puesto en el tema `Theme.Petagram.AcercaDe` |
+| Menú a Configurar cuenta | `TransitionSet` con `Slide` desde arriba y `Fade` | Java, `Transiciones.bajarDesdeArriba()` |
+| Entre pestañas | La pestaña que sale se encoge y se vuelve transparente | Java, `TransformadorZoom` en el `ViewPager2` |
+
+La flecha de regresar llama a `supportFinishAfterTransition()` para que también se vea la transición de salida.
+
 ## Estructura
 
 ```
@@ -224,6 +239,7 @@ Petagram/
     │   ├── presentador/                 un presentador y su interfaz por pantalla
     │   ├── adaptador/                   TimelineAdaptador y FotoAdaptador
     │   ├── notificaciones/              servicio de FCM, notificación con acciones y SeguirReceiver
+    │   ├── transiciones/                transiciones hechas en Java y TransformadorZoom
     │   └── restapi/                     EndpointsApi, ConstantesRestApi y JsonKeys
     │       ├── adaptador/               RestApiAdaptador
     │       ├── modelo/                  respuestas de Instagram y del web service
@@ -232,6 +248,7 @@ Petagram/
         ├── drawable/            mascotas, huesos, huella, estrella, cámara, íconos de pestañas
         ├── layout/              activities, fragments, items, toolbar, estado de carga
         ├── menu/                menu_principal.xml
+        ├── transition/          transiciones hechas en XML
         ├── mipmap-anydpi-v26/   ic_launcher.xml
         └── values/              colors, themes, strings, dimens
 ```

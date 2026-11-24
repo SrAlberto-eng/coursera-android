@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Acerca de. La pantalla sube desde abajo mientras aparece poco a poco.
+     Se aplica desde el tema Theme.Petagram.AcercaDe, sin una sola línea de Java. -->
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="600"
+    android:transitionOrdering="together">
+    <slide
+        android:interpolator="@android:interpolator/decelerate_quint"
+        android:slideEdge="bottom">
+        <targets>
+            <target android:excludeId="@android:id/statusBarBackground" />
+            <target android:excludeId="@android:id/navigationBarBackground" />
+        </targets>
+    </slide>
+    <fade>
+        <targets>
+            <target android:excludeId="@android:id/statusBarBackground" />
+            <target android:excludeId="@android:id/navigationBarBackground" />
+        </targets>
+    </fade>
+</transitionSet>

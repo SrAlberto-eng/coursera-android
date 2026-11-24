@@ -12,6 +12,7 @@ public class AcercaDeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Su transición no está aquí. La pone el tema Theme.Petagram.AcercaDe desde el manifest.
         setContentView(R.layout.activity_acerca_de);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -21,5 +22,12 @@ public class AcercaDeActivity extends AppCompatActivity {
             barra.setDisplayShowTitleEnabled(false);
             barra.setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    // La flecha de regresar cierra la pantalla con su transición de salida, igual que el botón de atrás
+    @Override
+    public boolean onSupportNavigateUp() {
+        supportFinishAfterTransition();
+        return true;
     }
 }

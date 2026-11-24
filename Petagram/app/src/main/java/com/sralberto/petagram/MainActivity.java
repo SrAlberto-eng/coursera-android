@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
@@ -35,6 +36,7 @@ import com.sralberto.petagram.modelo.UsuarioInstagram;
 import com.sralberto.petagram.notificaciones.Notificaciones;
 import com.sralberto.petagram.presentador.INotificacionesPresentador;
 import com.sralberto.petagram.presentador.NotificacionesPresentador;
+import com.sralberto.petagram.transiciones.TransformadorZoom;
 import com.sralberto.petagram.vista.ConfigurarCuentaActivity;
 import com.sralberto.petagram.vista.INotificacionesVista;
 import com.sralberto.petagram.vista.fragment.PerfilMascotaFragment;
@@ -120,6 +122,8 @@ public class MainActivity extends AppCompatActivity implements INotificacionesVi
     private void configurarPestanas() {
         viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(new PaginasAdaptador(this));
+        // Transición en Java entre pestañas. La que sale se encoge y la que entra crece.
+        viewPager.setPageTransformer(new TransformadorZoom());
 
         TabLayout tabs = findViewById(R.id.tabs);
         new TabLayoutMediator(tabs, viewPager, (pestana, posicion) -> {
@@ -163,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements INotificacionesVi
             return true;
         }
         if (id == R.id.action_configurar_cuenta) {
-            configurarCuenta.launch(new Intent(this, ConfigurarCuentaActivity.class));
+            configurarCuenta.launch(new Intent(this, ConfigurarCuentaActivity.class), conTransicion());
             return true;
         }
         if (id == R.id.action_recibir_notificaciones) {
@@ -189,7 +193,12 @@ public class MainActivity extends AppCompatActivity implements INotificacionesVi
     }
 
     private void abrir(Class<?> pantalla) {
-        startActivity(new Intent(this, pantalla));
+        startActivity(new Intent(this, pantalla), conTransicion().toBundle());
+    }
+
+    // Sin estas opciones Android abre la pantalla con su animación normal y no usa la transición que define
+    private ActivityOptionsCompat conTransicion() {
+        return ActivityOptionsCompat.makeSceneTransitionAnimation(this);
     }
 
     @Override

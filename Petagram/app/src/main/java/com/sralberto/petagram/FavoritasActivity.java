@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.sralberto.petagram.transiciones.Transiciones;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,8 @@ public class FavoritasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Transición en Java. Las favoritas explotan desde el centro al entrar.
+        getWindow().setEnterTransition(Transiciones.explotar());
         setContentView(R.layout.activity_favoritas);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -46,5 +49,12 @@ public class FavoritasActivity extends AppCompatActivity {
     protected void onDestroy() {
         baseDatos.close();
         super.onDestroy();
+    }
+
+    // La flecha de regresar cierra la pantalla con su transición de salida, igual que el botón de atrás
+    @Override
+    public boolean onSupportNavigateUp() {
+        supportFinishAfterTransition();
+        return true;
     }
 }

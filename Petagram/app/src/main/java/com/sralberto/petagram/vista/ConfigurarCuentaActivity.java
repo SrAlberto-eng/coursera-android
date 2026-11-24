@@ -18,6 +18,7 @@ import com.sralberto.petagram.modelo.CuentaPrincipal;
 import com.sralberto.petagram.modelo.UsuarioInstagram;
 import com.sralberto.petagram.presentador.ConfigurarCuentaPresentador;
 import com.sralberto.petagram.presentador.IConfigurarCuentaPresentador;
+import com.sralberto.petagram.transiciones.Transiciones;
 
 /**
  * Pantalla para asignar el usuario principal de la app.
@@ -34,6 +35,8 @@ public class ConfigurarCuentaActivity extends AppCompatActivity implements IConf
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Transición en Java. La pantalla baja desde arriba mientras aparece.
+        getWindow().setEnterTransition(Transiciones.bajarDesdeArriba());
         setContentView(R.layout.activity_configurar_cuenta);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -109,6 +112,13 @@ public class ConfigurarCuentaActivity extends AppCompatActivity implements IConf
         Toast.makeText(this, getString(R.string.cuenta_guardada, usuario.getUsername()),
                 Toast.LENGTH_SHORT).show();
         setResult(RESULT_OK);
-        finish();
+        supportFinishAfterTransition();
+    }
+
+    // La flecha de regresar cierra la pantalla con su transición de salida, igual que el botón de atrás
+    @Override
+    public boolean onSupportNavigateUp() {
+        supportFinishAfterTransition();
+        return true;
     }
 }

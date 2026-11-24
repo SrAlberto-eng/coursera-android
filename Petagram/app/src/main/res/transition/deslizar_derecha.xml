@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Contacto. La pantalla entra deslizándose desde la orilla derecha y sale por el mismo lado.
+     La carga ContactoActivity con TransitionInflater. -->
+<slide xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="450"
+    android:interpolator="@android:interpolator/decelerate_cubic"
+    android:slideEdge="right">
+    <targets>
+        <target android:excludeId="@android:id/statusBarBackground" />
+        <target android:excludeId="@android:id/navigationBarBackground" />
+    </targets>
+</slide>

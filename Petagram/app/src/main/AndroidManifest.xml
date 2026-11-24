@@ -36,7 +36,8 @@
         <activity
             android:name=".AcercaDeActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Petagram.AcercaDe" />
 
         <!-- Recibe los mensajes de Firebase Cloud Messaging -->
         <service
