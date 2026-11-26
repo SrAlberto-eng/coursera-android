@@ -48,6 +48,42 @@
             android:paddingBottom="96dp" />
     </LinearLayout>
 
+    <!-- Aviso cuando no hay recetas o la búsqueda no encuentra nada -->
+    <LinearLayout
+        android:id="@+id/vacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margen"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/icono_foto_grande"
+            android:layout_height="@dimen/icono_foto_grande"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_cubiertos"
+            app:tint="@color/texto_suave" />
+
+        <TextView
+            android:id="@+id/tv_vacio_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textAppearance="@style/TextAppearance.PaperRecipes.TituloGrande"
+            android:textColor="@color/texto" />
+
+        <TextView
+            android:id="@+id/tv_vacio_mensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoMediano"
+            android:textColor="@color/texto_suave" />
+    </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_nueva"
         android:layout_width="wrap_content"

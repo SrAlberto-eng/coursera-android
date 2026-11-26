@@ -47,6 +47,15 @@
                         android:contentDescription="@string/desc_foto"
                         android:src="@drawable/ic_cubiertos"
                         app:tint="@color/texto_suave" />
+
+                    <!-- Foto de la receta. Si no tiene, queda oculta y se ve el ícono. -->
+                    <ImageView
+                        android:id="@+id/iv_foto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/desc_foto"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
                 </FrameLayout>
 
                 <TextView
@@ -95,6 +104,7 @@
                     android:paddingVertical="4dp" />
 
                 <TextView
+                    android:id="@+id/tv_titulo_pasos"
                     style="@style/TituloSeccion"
                     android:layout_marginTop="@dimen/espacio_secciones"
                     android:text="@string/pasos" />

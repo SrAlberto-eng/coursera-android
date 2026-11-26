@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Un ingrediente en el registro: nombre, cantidad y unidad. RegistroActivity agrega uno por ingrediente.
+     saveEnabled="false" evita que Android mezcle los valores, porque todas las filas usan los mismos id. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/fondo_editor_ingrediente"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/Campo"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                style="@style/Campo.Etiqueta"
+                android:text="@string/ingrediente" />
+
+            <EditText
+                android:id="@+id/et_ingrediente"
+                style="@style/Campo.Valor"
+                android:hint="@string/ingrediente_pista"
+                android:inputType="textCapSentences"
+                android:saveEnabled="false" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_quitar_ingrediente"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/quitar_ingrediente"
+            android:src="@drawable/ic_cerrar"
+            app:tint="@color/texto_suave" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            style="@style/Campo"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                style="@style/Campo.Etiqueta"
+                android:text="@string/cantidad" />
+
+            <EditText
+                android:id="@+id/et_cantidad"
+                style="@style/Campo.Valor"
+                android:hint="@string/cantidad_pista"
+                android:inputType="numberDecimal"
+                android:saveEnabled="false" />
+        </LinearLayout>
+
+        <!-- Al tocarlo se abre la lista de unidades -->
+        <LinearLayout
+            android:id="@+id/campo_unidad"
+            style="@style/Campo"
+            android:layout_width="112dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Campo.Etiqueta"
+                    android:text="@string/unidad" />
+
+                <TextView
+                    android:id="@+id/tv_unidad"
+                    style="@style/Campo.Valor"
+                    android:saveEnabled="false"
+                    android:text="@string/unidad_ejemplo" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_desplegar"
+                app:tint="@color/texto_suave" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -3,6 +3,7 @@ package com.sralberto.paperrecipes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,26 +21,29 @@ import java.util.List;
 public class RecetaAdaptador extends RecyclerView.Adapter<RecetaAdaptador.RecetaViewHolder> {
 
     public interface AlTocarReceta {
-        void alTocar(int posicion);
+        void alTocar(long idReceta);
     }
 
-    private final List<Receta> recetas;
+    public static final long SIN_SELECCION = -1;
+
+    private final List<Receta> recetas = new ArrayList<>();
     private final AlTocarReceta alTocar;
     // En tableta la receta abierta en el panel de detalle lleva borde terracota
-    private int seleccionada = RecyclerView.NO_POSITION;
+    private long seleccionada = SIN_SELECCION;
 
-    public RecetaAdaptador(List<Receta> recetas, AlTocarReceta alTocar) {
-        this.recetas = recetas;
+    public RecetaAdaptador(AlTocarReceta alTocar) {
         this.alTocar = alTocar;
     }
 
-    public void seleccionar(int posicion) {
-        int anterior = seleccionada;
-        seleccionada = posicion;
-        if (anterior != RecyclerView.NO_POSITION) {
-            notifyItemChanged(anterior);
-        }
-        notifyItemChanged(posicion);
+    public void setRecetas(List<Receta> nuevas) {
+        recetas.clear();
+        recetas.addAll(nuevas);
+        notifyDataSetChanged();
+    }
+
+    public void seleccionar(long idReceta) {
+        seleccionada = idReceta;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -56,18 +61,16 @@ public class RecetaAdaptador extends RecyclerView.Adapter<RecetaAdaptador.Receta
         holder.tvResumen.setText(holder.itemView.getContext().getString(R.string.resumen_tarjeta,
                 receta.getIngredientes().size(), receta.getPorciones()));
 
-        boolean elegida = position == seleccionada;
+        float radio = holder.itemView.getResources().getDimension(R.dimen.radio_tarjeta);
+        Fotos.mostrar(holder.ivFoto, receta.getFoto(), radio, 0);
+
+        boolean elegida = receta.getId() == seleccionada;
         holder.tarjeta.setStrokeWidth(elegida
                 ? holder.itemView.getResources().getDimensionPixelSize(R.dimen.borde_seleccion)
                 : 0);
         holder.tarjeta.setStrokeColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.primario));
 
-        holder.itemView.setOnClickListener(v -> {
-            int actual = holder.getBindingAdapterPosition();
-            if (actual != RecyclerView.NO_POSITION) {
-                alTocar.alTocar(actual);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> alTocar.alTocar(receta.getId()));
     }
 
     @Override
@@ -78,12 +81,14 @@ public class RecetaAdaptador extends RecyclerView.Adapter<RecetaAdaptador.Receta
     static class RecetaViewHolder extends RecyclerView.ViewHolder {
 
         final MaterialCardView tarjeta;
+        final ImageView ivFoto;
         final TextView tvNombre;
         final TextView tvResumen;
 
         RecetaViewHolder(@NonNull View itemView) {
             super(itemView);
             tarjeta = (MaterialCardView) itemView;
+            ivFoto = itemView.findViewById(R.id.iv_foto);
             tvNombre = itemView.findViewById(R.id.tv_nombre);
             tvResumen = itemView.findViewById(R.id.tv_resumen);
         }

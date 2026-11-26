@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Recetas de ejemplo para llenar las vistas. En esta entrega la app todavía no guarda datos,
- * así que la lista es fija. En la siguiente versión vendrá de SQLite.
+ * Recetas de ejemplo (datos dummy). BaseDatosRecetas las guarda en SQLite la primera vez
+ * que se crea la base, así la app arranca con algo que probar.
  */
 public final class Recetas {
 
-    public static final List<Receta> LISTA = Arrays.asList(
+    public static final List<Receta> EJEMPLOS = Arrays.asList(
             new Receta("Hotcakes", "Esponjosos, para un domingo sin prisa.", 4,
                     new Ingrediente[]{
                             new Ingrediente("Harina de trigo", 250, "g"),

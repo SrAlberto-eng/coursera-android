@@ -4,7 +4,7 @@
     <string name="app_name" translatable="false">PaperRecipes</string>
     <string name="logo_paper" translatable="false">paper</string>
     <string name="logo_recipes" translatable="false">recipes</string>
-    <string name="version" translatable="false">v1.0</string>
+    <string name="version" translatable="false">v2.0</string>
     <string name="eslogan">Tus recetas en la cantidad exacta.</string>
     <string name="desc_logo">Logotipo de PaperRecipes</string>
 
@@ -79,4 +79,40 @@
         <item quantity="one">%s porción</item>
         <item quantity="other">%s porciones</item>
     </plurals>
+
+    <!-- Lista vacía -->
+    <string name="vacio_titulo">Todavía no hay recetas</string>
+    <string name="vacio_mensaje">Toca Nueva receta para agregar la primera.</string>
+    <string name="sin_resultados_titulo">Sin resultados</string>
+    <string name="sin_resultados_mensaje">Prueba con otro nombre o ingrediente.</string>
+
+    <!-- Registro con datos -->
+    <string name="pasos_etiqueta">PASO %d</string>
+    <string name="paso_pista">Describe el paso</string>
+    <string name="agregar_paso">Agregar paso</string>
+    <string name="quitar_paso">Quitar paso</string>
+    <string name="elegir_unidad">Unidad</string>
+    <string name="receta_guardada">Receta guardada</string>
+    <string name="receta_borrada">Receta borrada</string>
+    <string name="error_nombre">Escribe el nombre de la receta.</string>
+    <string name="error_porciones">Indica cuántas porciones rinde la receta completa.</string>
+    <string name="error_sin_ingredientes">Agrega al menos un ingrediente.</string>
+    <string name="error_ingrediente">Cada ingrediente necesita nombre y una cantidad mayor a cero.</string>
+    <string name="error_foto">No se pudo cargar la foto.</string>
+    <string name="sin_camara">No se encontró una app de cámara.</string>
+    <string-array name="unidades">
+        <item>g</item>
+        <item>kg</item>
+        <item>mg</item>
+        <item>ml</item>
+        <item>l</item>
+        <item>pza</item>
+        <item>taza</item>
+        <item>cda</item>
+        <item>cdta</item>
+        <item>pizca</item>
+        <item>diente</item>
+        <item>raja</item>
+        <item>rebanada</item>
+    </string-array>
 </resources>

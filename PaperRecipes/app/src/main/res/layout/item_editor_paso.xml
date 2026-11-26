@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Un paso en el registro, con su número. RegistroActivity agrega uno por paso. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_numero"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/fondo_numero_paso"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.PaperRecipes.EtiquetaMediana"
+        android:textColor="@color/texto_suave"
+        tools:text="1" />
+
+    <LinearLayout
+        style="@style/Campo"
+        android:layout_width="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_etiqueta_paso"
+            style="@style/Campo.Etiqueta"
+            tools:text="PASO 1" />
+
+        <EditText
+            android:id="@+id/et_paso"
+            style="@style/Campo.Valor"
+            android:hint="@string/paso_pista"
+            android:inputType="textCapSentences|textMultiLine"
+            android:saveEnabled="false" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_quitar_paso"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/quitar_paso"
+        android:src="@drawable/ic_cerrar"
+        app:tint="@color/texto_suave" />
+
+</LinearLayout>

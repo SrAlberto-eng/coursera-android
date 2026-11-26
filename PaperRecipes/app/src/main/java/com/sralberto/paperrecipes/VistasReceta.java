@@ -7,8 +7,6 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 
 /**
@@ -22,16 +20,10 @@ public final class VistasReceta {
     private VistasReceta() {
     }
 
-    /** Muestra 2 en lugar de 2.0 y 1.5 en lugar de 1.50. */
-    public static String formatear(double valor) {
-        return BigDecimal.valueOf(valor)
-                .setScale(2, RoundingMode.HALF_UP)
-                .stripTrailingZeros()
-                .toPlainString();
-    }
-
+    /** "500 g" para un ingrediente escalado. Si el factor no es válido muestra un guion. */
     public static String cantidadConUnidad(Ingrediente ingrediente, double factor) {
-        return formatear(ingrediente.getCantidad() * factor) + " " + ingrediente.getUnidad();
+        return Escala.formatear(Escala.escalar(ingrediente.getCantidad(), factor))
+                + " " + ingrediente.getUnidad();
     }
 
     /**

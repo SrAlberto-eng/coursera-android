@@ -64,4 +64,40 @@
         <item quantity="one">%s serving</item>
         <item quantity="other">%s servings</item>
     </plurals>
+
+    <!-- Empty list -->
+    <string name="vacio_titulo">No recipes yet</string>
+    <string name="vacio_mensaje">Tap New recipe to add your first one.</string>
+    <string name="sin_resultados_titulo">No matches</string>
+    <string name="sin_resultados_mensaje">Try another name or ingredient.</string>
+
+    <!-- Editor with data -->
+    <string name="pasos_etiqueta">STEP %d</string>
+    <string name="paso_pista">Describe the step</string>
+    <string name="agregar_paso">Add step</string>
+    <string name="quitar_paso">Remove step</string>
+    <string name="elegir_unidad">Unit</string>
+    <string name="receta_guardada">Recipe saved</string>
+    <string name="receta_borrada">Recipe deleted</string>
+    <string name="error_nombre">Enter the recipe name.</string>
+    <string name="error_porciones">Enter how many servings the full recipe makes.</string>
+    <string name="error_sin_ingredientes">Add at least one ingredient.</string>
+    <string name="error_ingrediente">Each ingredient needs a name and an amount greater than zero.</string>
+    <string name="error_foto">The photo could not be loaded.</string>
+    <string name="sin_camara">No camera app was found.</string>
+    <string-array name="unidades">
+        <item>g</item>
+        <item>kg</item>
+        <item>mg</item>
+        <item>ml</item>
+        <item>l</item>
+        <item>pc</item>
+        <item>cup</item>
+        <item>tbsp</item>
+        <item>tsp</item>
+        <item>pinch</item>
+        <item>clove</item>
+        <item>stick</item>
+        <item>slice</item>
+    </string-array>
 </resources>

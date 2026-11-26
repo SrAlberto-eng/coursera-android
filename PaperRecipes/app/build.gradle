@@ -10,8 +10,8 @@ android {
         applicationId = 'com.sralberto.paperrecipes'
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = '1.0'
+        versionCode = 2
+        versionName = '2.0'
     }
 
     compileOptions {
@@ -24,4 +24,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'com.google.android.material:material:1.14.0'
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    // Muestra las fotos de las recetas ya recortadas y con esquinas redondeadas
+    implementation 'com.github.bumptech.glide:glide:5.0.5'
+
+    // Pruebas de la lógica de escala, búsqueda y validación
+    testImplementation 'junit:junit:4.13.2'
 }

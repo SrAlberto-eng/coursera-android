@@ -27,14 +27,27 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
 
+        <!-- Al girar el teléfono no se recrea, así no se pierden los ingredientes que se van escribiendo -->
         <activity
             android:name=".RegistroActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".PrepararActivity"
             android:exported="false" />
+
+        <!-- Le da a la app de cámara permiso de escribir la foto en la carpeta privada de la app -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.archivos"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rutas_archivos" />
+        </provider>
     </application>
 
 </manifest>

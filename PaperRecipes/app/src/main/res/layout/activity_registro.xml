@@ -28,28 +28,42 @@
             android:paddingTop="8dp"
             android:paddingBottom="24dp">
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:background="@drawable/fondo_selector_foto"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:background="@drawable/fondo_selector_foto">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_agregar_foto"
+                        app:tint="@color/texto_suave" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/agregar_foto"
+                        android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoMediano"
+                        android:textColor="@color/texto_suave" />
+                </LinearLayout>
+
+                <!-- Vista previa de la foto elegida. Tapa el aviso de arriba cuando hay foto. -->
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:importantForAccessibility="no"
-                    android:src="@drawable/ic_agregar_foto"
-                    app:tint="@color/texto_suave" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/agregar_foto"
-                    android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoMediano"
-                    android:textColor="@color/texto_suave" />
-            </LinearLayout>
+                    android:id="@+id/iv_foto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/desc_foto"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -130,106 +144,13 @@
                 android:layout_marginTop="14dp"
                 android:text="@string/ingredientes" />
 
-            <!-- Un ingrediente en edición. En la siguiente entrega se agregan más con el botón de abajo. -->
+            <!-- Una fila por ingrediente, con el diseño de item_editor_ingrediente.xml -->
             <LinearLayout
+                android:id="@+id/contenedor_ingredientes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/fondo_editor_ingrediente"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        style="@style/Campo"
-                        android:layout_width="0dp"
-                        android:layout_weight="1">
-
-                        <TextView
-                            style="@style/Campo.Etiqueta"
-                            android:labelFor="@+id/et_ingrediente"
-                            android:text="@string/ingrediente" />
-
-                        <EditText
-                            android:id="@+id/et_ingrediente"
-                            style="@style/Campo.Valor"
-                            android:hint="@string/ingrediente_pista"
-                            android:inputType="textCapSentences" />
-                    </LinearLayout>
-
-                    <ImageButton
-                        android:id="@+id/btn_quitar_ingrediente"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="4dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="@string/quitar_ingrediente"
-                        android:src="@drawable/ic_cerrar"
-                        app:tint="@color/texto_suave" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        style="@style/Campo"
-                        android:layout_width="0dp"
-                        android:layout_weight="1">
-
-                        <TextView
-                            style="@style/Campo.Etiqueta"
-                            android:labelFor="@+id/et_cantidad"
-                            android:text="@string/cantidad" />
-
-                        <EditText
-                            android:id="@+id/et_cantidad"
-                            style="@style/Campo.Valor"
-                            android:hint="@string/cantidad_pista"
-                            android:inputType="numberDecimal" />
-                    </LinearLayout>
-
-                    <!-- La unidad se elegirá de una lista. Por ahora solo se muestra el valor. -->
-                    <LinearLayout
-                        style="@style/Campo"
-                        android:layout_width="112dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Campo.Etiqueta"
-                                android:text="@string/unidad" />
-
-                            <TextView
-                                android:id="@+id/tv_unidad"
-                                style="@style/Campo.Valor"
-                                android:text="@string/unidad_ejemplo" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:importantForAccessibility="no"
-                            android:src="@drawable/ic_desplegar"
-                            app:tint="@color/texto_suave" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_marginTop="4dp"
+                android:orientation="vertical" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_agregar_ingrediente"
@@ -238,6 +159,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:text="@string/agregar_ingrediente"
+                app:icon="@drawable/ic_agregar" />
+
+            <TextView
+                style="@style/TituloSeccion"
+                android:layout_marginTop="24dp"
+                android:text="@string/pasos" />
+
+            <!-- Una fila por paso, con el diseño de item_editor_paso.xml -->
+            <LinearLayout
+                android:id="@+id/contenedor_pasos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_agregar_paso"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/agregar_paso"
                 app:icon="@drawable/ic_agregar" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

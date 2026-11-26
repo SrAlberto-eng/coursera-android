@@ -30,6 +30,15 @@
                 android:contentDescription="@string/desc_foto"
                 android:src="@drawable/ic_cubiertos"
                 app:tint="@color/texto_suave" />
+
+            <!-- Foto de la receta. Si no tiene, queda oculta y se ve el ícono de abajo. -->
+            <ImageView
+                android:id="@+id/iv_foto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
         </FrameLayout>
 
         <LinearLayout

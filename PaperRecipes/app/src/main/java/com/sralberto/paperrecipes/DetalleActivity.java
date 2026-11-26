@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class DetalleActivity extends AppCompatActivity {
 
-    public static final String EXTRA_POSICION = "posicion";
+    public static final String EXTRA_ID_RECETA = "id_receta";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,9 @@ public class DetalleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle);
 
         if (savedInstanceState == null) {
-            int posicion = getIntent().getIntExtra(EXTRA_POSICION, 0);
+            long idReceta = getIntent().getLongExtra(EXTRA_ID_RECETA, Receta.SIN_ID);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contenedor, DetalleFragment.nuevo(posicion, false))
+                    .add(R.id.contenedor, DetalleFragment.nuevo(idReceta, false))
                     .commit();
         }
     }
