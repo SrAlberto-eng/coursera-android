@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paso de la receta con su número en un recuadro -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/tv_numero"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/fondo_numero_paso"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.PaperRecipes.EtiquetaMediana"
+        android:textColor="@color/texto_suave"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tv_paso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1"
+        android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoGrande"
+        android:textColor="@color/texto"
+        tools:text="Mezcla la harina, el azúcar y el polvo para hornear en un tazón." />
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paleta "carbón" para el modo oscuro del sistema -->
+<resources>
+    <color name="fondo">#1A1A18</color>
+    <color name="superficie">#232220</color>
+    <color name="superficie_alt">#2E2C29</color>
+    <color name="borde">#3A3833</color>
+    <color name="texto">#EDE8DD</color>
+    <color name="texto_suave">#9C9488</color>
+    <color name="primario">#D98A52</color>
+    <color name="sobre_primario">#1A1A18</color>
+    <color name="contenedor_primario">#C7733B</color>
+    <color name="sobre_contenedor_primario">#EDE8DD</color>
+    <color name="error">#B5503F</color>
+</resources>

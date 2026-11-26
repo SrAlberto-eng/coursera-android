@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 09 · Detalle en el panel derecho de la tableta: resumen a la izquierda e ingredientes a la derecha.
+     Usa los mismos id que la versión de celular para que DetalleFragment funcione igual. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingStart="8dp"
+        app:navigationContentDescription="@string/regresar"
+        app:navigationIcon="@drawable/ic_atras" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/margen_tableta"
+            android:paddingTop="8dp"
+            android:paddingEnd="32dp"
+            android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/alto_foto_tableta"
+                    android:background="@drawable/fondo_foto">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/desc_foto"
+                        android:src="@drawable/ic_cubiertos"
+                        app:tint="@color/texto_suave" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espacio_secciones"
+                    android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoGrande"
+                    android:textColor="@color/texto_suave" />
+
+                <TextView
+                    android:id="@+id/tv_rinde"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espacio_secciones"
+                    android:textAppearance="@style/TextAppearance.PaperRecipes.EtiquetaGrande"
+                    android:textColor="@color/primario" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_preparar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espacio_secciones"
+                    android:text="@string/preparar_receta"
+                    app:icon="@drawable/ic_cubiertos" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TituloSeccion"
+                    android:text="@string/ingredientes" />
+
+                <LinearLayout
+                    android:id="@+id/lista_ingredientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/espacio_titulo_lista"
+                    android:background="@drawable/fondo_lista"
+                    android:orientation="vertical"
+                    android:paddingVertical="4dp" />
+
+                <TextView
+                    style="@style/TituloSeccion"
+                    android:layout_marginTop="@dimen/espacio_secciones"
+                    android:text="@string/pasos" />
+
+                <LinearLayout
+                    android:id="@+id/lista_pasos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tarjeta de receta: espacio para la foto arriba y nombre con resumen abajo -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/medio_espacio_tarjetas"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/superficie"
+    app:cardCornerRadius="@dimen/radio_tarjeta"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/alto_foto_tarjeta"
+            android:background="@drawable/fondo_foto_tarjeta">
+
+            <ImageView
+                android:layout_width="@dimen/icono_foto"
+                android:layout_height="@dimen/icono_foto"
+                android:layout_gravity="center"
+                android:contentDescription="@string/desc_foto"
+                android:src="@drawable/ic_cubiertos"
+                app:tint="@color/texto_suave" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.PaperRecipes.TituloMediano"
+                android:textColor="@color/texto"
+                tools:text="Hotcakes" />
+
+            <TextView
+                android:id="@+id/tv_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoMediano"
+                android:textColor="@color/texto_suave"
+                tools:text="6 ingr. · 4 porc." />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

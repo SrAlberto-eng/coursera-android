@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Primer plano del ícono adaptable. Se reduce al 80 % para quedar dentro de la zona segura del recorte. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.8"
+        android:scaleY="0.8">
+        <path
+            android:fillColor="#F4F1EA"
+            android:pathData="M37,22H61L77,38V82A4,4 0,0 1,73 86H37A4,4 0,0 1,33 82V26A4,4 0,0 1,37 22Z" />
+        <path
+            android:fillColor="#D9D2C5"
+            android:pathData="M61,22V34A4,4 0,0 0,65 38H77Z" />
+        <path
+            android:fillColor="#C7733B"
+            android:pathData="M43.5,50H66.5A2.5,2.5 0,0 1,66.5 55H43.5A2.5,2.5 0,0 1,43.5 50Z M43.5,61H66.5A2.5,2.5 0,0 1,66.5 66H43.5A2.5,2.5 0,0 1,43.5 61Z M43.5,72H54.5A2.5,2.5 0,0 1,54.5 77H43.5A2.5,2.5 0,0 1,43.5 72Z" />
+    </group>
+</vector>

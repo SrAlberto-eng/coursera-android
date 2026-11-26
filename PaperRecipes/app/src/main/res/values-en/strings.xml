@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English texts. Android uses this file when the phone is set to English. -->
+<resources>
+    <string name="eslogan">Your recipes in the exact amount.</string>
+    <string name="desc_logo">PaperRecipes logo</string>
+
+    <!-- List -->
+    <string name="recetas">Recipes</string>
+    <string name="buscar_etiqueta">SEARCH</string>
+    <string name="buscar_pista">Find a recipe</string>
+    <string name="nueva_receta">New recipe</string>
+    <string name="resumen_tarjeta">%1$d ingr. · %2$d serv.</string>
+
+    <!-- Detail -->
+    <plurals name="rinde_porciones">
+        <item quantity="one">Makes %d serving</item>
+        <item quantity="other">Makes %d servings</item>
+    </plurals>
+    <string name="preparar_receta">Make this recipe</string>
+    <string name="ingredientes">Ingredients</string>
+    <string name="pasos">Steps</string>
+    <string name="regresar">Back</string>
+    <string name="editar">Edit</string>
+    <string name="borrar">Delete</string>
+    <string name="cancelar">Cancel</string>
+    <string name="borrar_titulo">Delete recipe?</string>
+    <string name="borrar_mensaje">This will permanently remove “%s”.</string>
+    <string name="desc_foto">Dish photo</string>
+
+    <!-- Editor -->
+    <string name="editar_receta">Edit recipe</string>
+    <string name="cerrar">Close</string>
+    <string name="agregar_foto">Add a photo of the dish</string>
+    <string name="galeria">Gallery</string>
+    <string name="camara">Camera</string>
+    <string name="nombre_receta">RECIPE NAME</string>
+    <string name="nombre_pista">Red chilaquiles</string>
+    <string name="descripcion">DESCRIPTION</string>
+    <string name="descripcion_pista">Crispy, with guajillo chili sauce.</string>
+    <string name="porciones_completa">SERVINGS (FULL RECIPE)</string>
+    <string name="ingrediente">INGREDIENT</string>
+    <string name="ingrediente_pista">Tortilla chips</string>
+    <string name="cantidad">QUANTITY</string>
+    <string name="unidad">UNIT</string>
+    <string name="quitar_ingrediente">Remove ingredient</string>
+    <string name="agregar_ingrediente">Add ingredient</string>
+    <string name="guardar_receta">Save recipe</string>
+
+    <!-- Make -->
+    <string name="preparar_titulo">Make: %s</string>
+    <string name="modo_porciones">Portions</string>
+    <string name="modo_multiplicador">Multiplier</string>
+    <string name="modo_tengo">I have…</string>
+    <string name="cuanto_preparar">How much do you want to make?</string>
+    <string name="multiplicador_ayuda">Enter a multiplier. For example, 1.5 is one and a half batches.</string>
+    <string name="multiplicador">MULTIPLIER</string>
+    <string name="tengo_ayuda">Tell how much of one ingredient you have and the app scales the rest.</string>
+    <string name="ingrediente_que_tengo">INGREDIENT I HAVE</string>
+    <string name="cantidad_que_tienes">AMOUNT YOU HAVE (%s)</string>
+    <string name="receta_usa">The recipe uses %s</string>
+    <string name="escala">SCALE</string>
+    <string name="rinde">YIELDS</string>
+    <plurals name="porciones">
+        <item quantity="one">%s serving</item>
+        <item quantity="other">%s servings</item>
+    </plurals>
+</resources>

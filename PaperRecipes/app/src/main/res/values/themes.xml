@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- DayNight toma los colores de values o values-night según el modo del sistema -->
+    <style name="Theme.PaperRecipes" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorOnPrimary">@color/sobre_primario</item>
+        <item name="colorPrimaryContainer">@color/contenedor_primario</item>
+        <item name="colorOnPrimaryContainer">@color/sobre_contenedor_primario</item>
+        <item name="colorSecondary">@color/primario</item>
+        <item name="colorOnSecondary">@color/sobre_primario</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorOnBackground">@color/texto</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto</item>
+        <item name="colorSurfaceVariant">@color/superficie_alt</item>
+        <item name="colorOnSurfaceVariant">@color/texto_suave</item>
+        <item name="colorSurfaceContainer">@color/superficie</item>
+        <item name="colorSurfaceContainerHigh">@color/superficie</item>
+        <item name="colorSurfaceContainerHighest">@color/superficie</item>
+        <item name="colorOutline">@color/borde</item>
+        <item name="colorOutlineVariant">@color/borde</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="android:statusBarColor">@color/fondo</item>
+        <item name="android:navigationBarColor">@color/fondo</item>
+        <item name="android:windowLightStatusBar">@bool/barra_estado_clara</item>
+
+        <item name="toolbarStyle">@style/Widget.PaperRecipes.Toolbar</item>
+        <item name="materialButtonStyle">@style/Widget.PaperRecipes.Boton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.PaperRecipes.Boton.Secundario</item>
+        <item name="chipStyle">@style/Widget.PaperRecipes.Chip</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.PaperRecipes.BotonFlotante</item>
+    </style>
+
+    <!-- Tipografía: Roboto Mono para títulos, etiquetas y cantidades. Roboto para lectura. -->
+    <style name="TextAppearance.PaperRecipes.Display" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/roboto_mono_semibold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:letterSpacing">-0.017</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.Titular" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/roboto_mono_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.TitularChico" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/roboto_mono_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.TituloGrande" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/roboto_mono_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.TituloMediano" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.CuerpoGrande" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.CuerpoMediano" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.EtiquetaGrande" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/roboto_mono_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.036</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TextAppearance.PaperRecipes.EtiquetaMediana" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/roboto_mono_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Esquinas -->
+    <style name="Forma.Chica" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="Forma.Boton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radio_boton</item>
+    </style>
+
+    <style name="Forma.Tarjeta" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radio_tarjeta</item>
+    </style>
+
+    <!-- Componentes -->
+    <style name="Widget.PaperRecipes.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/fondo</item>
+        <item name="titleTextAppearance">@style/TextAppearance.PaperRecipes.TituloGrande</item>
+        <item name="titleTextColor">@color/texto</item>
+        <item name="navigationIconTint">@color/texto</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+    <style name="Widget.PaperRecipes.Boton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primario</item>
+        <item name="android:textColor">@color/sobre_primario</item>
+        <item name="iconTint">@color/sobre_primario</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconPadding">8dp</item>
+        <item name="android:minHeight">@dimen/alto_boton</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.EtiquetaGrande</item>
+        <item name="shapeAppearanceOverlay">@style/Forma.Boton</item>
+    </style>
+
+    <style name="Widget.PaperRecipes.Boton.Secundario" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="iconTint">@color/texto</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconPadding">8dp</item>
+        <item name="strokeColor">@color/borde</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:minHeight">@dimen/alto_boton_chico</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.EtiquetaGrande</item>
+        <item name="shapeAppearanceOverlay">@style/Forma.Boton</item>
+    </style>
+
+    <!-- Botones del selector de modo en la pantalla de preparación -->
+    <style name="Widget.PaperRecipes.BotonModo" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@color/seleccion_fondo</item>
+        <item name="android:textColor">@color/seleccion_texto</item>
+        <item name="strokeColor">@color/borde</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:minHeight">42dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.EtiquetaMediana</item>
+    </style>
+
+    <style name="Widget.PaperRecipes.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/seleccion_fondo</item>
+        <item name="android:textColor">@color/seleccion_texto</item>
+        <item name="chipStrokeColor">@color/borde</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipMinHeight">34dp</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.EtiquetaGrande</item>
+        <item name="shapeAppearanceOverlay">@style/Forma.Chica</item>
+    </style>
+
+    <style name="Widget.PaperRecipes.BotonFlotante" parent="Widget.Material3.ExtendedFloatingActionButton.Icon.Primary">
+        <item name="backgroundTint">@color/primario</item>
+        <item name="android:textColor">@color/sobre_primario</item>
+        <item name="iconTint">@color/sobre_primario</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.EtiquetaGrande</item>
+        <item name="shapeAppearanceOverlay">@style/Forma.Tarjeta</item>
+    </style>
+
+    <!-- Campo de texto de la maqueta: etiqueta en mayúsculas arriba y el valor abajo, dentro de un recuadro -->
+    <style name="Campo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/fondo_campo</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">9dp</item>
+        <item name="android:paddingBottom">9dp</item>
+    </style>
+
+    <style name="Campo.Etiqueta" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.EtiquetaMediana</item>
+        <item name="android:textColor">@color/texto_suave</item>
+    </style>
+
+    <style name="Campo.Valor" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.CuerpoGrande</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:textColorHint">@color/texto_suave</item>
+        <item name="android:importantForAutofill">no</item>
+    </style>
+
+    <!-- Títulos de sección como "Ingredientes" y "Pasos" -->
+    <style name="TituloSeccion">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.TituloGrande</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <!-- Textos de ayuda en color suave -->
+    <style name="TextoAyuda">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.PaperRecipes.CuerpoMediano</item>
+        <item name="android:textColor">@color/texto_suave</item>
+    </style>
+
+</resources>

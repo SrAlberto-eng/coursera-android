@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Renglón de ingrediente: nombre a la izquierda y cantidad con unidad a la derecha -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="11dp">
+
+    <TextView
+        android:id="@+id/tv_ingrediente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="@style/TextAppearance.PaperRecipes.CuerpoGrande"
+        android:textColor="@color/texto"
+        tools:text="Harina de trigo" />
+
+    <TextView
+        android:id="@+id/tv_cantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textAppearance="@style/TextAppearance.PaperRecipes.EtiquetaGrande"
+        android:textColor="@color/texto_suave"
+        tools:text="250 g" />
+
+</LinearLayout>

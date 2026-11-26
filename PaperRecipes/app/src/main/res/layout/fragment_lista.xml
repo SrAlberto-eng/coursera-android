@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 02 · Lista de recetas: título, buscador y cuadrícula de dos columnas -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margen"
+            android:layout_marginTop="16dp"
+            android:text="@string/recetas"
+            android:textAppearance="@style/TextAppearance.PaperRecipes.Titular"
+            android:textColor="@color/texto" />
+
+        <LinearLayout
+            style="@style/Campo"
+            android:layout_marginHorizontal="@dimen/margen"
+            android:layout_marginTop="@dimen/espacio_secciones">
+
+            <TextView
+                style="@style/Campo.Etiqueta"
+                android:labelFor="@+id/et_buscar"
+                android:text="@string/buscar_etiqueta" />
+
+            <EditText
+                android:id="@+id/et_buscar"
+                style="@style/Campo.Valor"
+                android:hint="@string/buscar_pista"
+                android:imeOptions="actionSearch"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <!-- El padding más el margen de cada tarjeta suman los 20 dp de la maqueta -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recetas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="9dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="13dp"
+            android:paddingBottom="96dp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_nueva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/margen"
+        android:layout_marginBottom="24dp"
+        android:text="@string/nueva_receta"
+        app:icon="@drawable/ic_agregar" />
+
+</FrameLayout>

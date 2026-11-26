@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margen">20dp</dimen>
+    <dimen name="margen_tableta">24dp</dimen>
+    <dimen name="espacio_secciones">16dp</dimen>
+    <dimen name="espacio_titulo_lista">10dp</dimen>
+    <!-- Separación entre tarjetas: cada tarjeta lleva la mitad como margen -->
+    <dimen name="medio_espacio_tarjetas">7dp</dimen>
+    <dimen name="alto_foto_tarjeta">139dp</dimen>
+    <dimen name="alto_foto_detalle">190dp</dimen>
+    <dimen name="alto_foto_tableta">240dp</dimen>
+    <dimen name="alto_boton">52dp</dimen>
+    <dimen name="alto_boton_chico">46dp</dimen>
+    <dimen name="ancho_panel_lista">440dp</dimen>
+    <dimen name="radio_tarjeta">16dp</dimen>
+    <dimen name="borde_seleccion">2dp</dimen>
+    <dimen name="radio_boton">12dp</dimen>
+    <dimen name="icono_foto">36dp</dimen>
+    <dimen name="icono_foto_grande">48dp</dimen>
+    <dimen name="logo_inicio">96dp</dimen>
+</resources>

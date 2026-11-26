@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paleta "papel" de la maquetación. Los mismos nombres cambian de valor en values-night. -->
+<resources>
+    <color name="fondo">#F4F1EA</color>
+    <color name="superficie">#FBF9F4</color>
+    <color name="superficie_alt">#EAE5DA</color>
+    <color name="borde">#D9D2C5</color>
+    <color name="texto">#26241F</color>
+    <color name="texto_suave">#6B655A</color>
+    <color name="primario">#C7733B</color>
+    <color name="sobre_primario">#FFFFFF</color>
+    <color name="contenedor_primario">#E9C9AE</color>
+    <color name="sobre_contenedor_primario">#26241F</color>
+    <color name="error">#B5503F</color>
+    <!-- Fondo del ícono de la app. No cambia con el modo oscuro. -->
+    <color name="logo_fondo">#1A1A18</color>
+</resources>

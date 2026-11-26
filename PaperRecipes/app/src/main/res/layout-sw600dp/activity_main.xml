@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 09 · Tableta: lista a la izquierda y detalle a la derecha. MainActivity detecta este
+     layout porque existe contenedor_detalle. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmento_lista"
+        android:name="com.sralberto.paperrecipes.ListaFragment"
+        android:layout_width="@dimen/ancho_panel_lista"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/borde" />
+
+    <FrameLayout
+        android:id="@+id/contenedor_detalle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

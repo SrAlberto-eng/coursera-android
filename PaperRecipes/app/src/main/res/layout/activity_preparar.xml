@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 05 y 06 · Preparación: selector de modo, panel del modo elegido, resumen de escala e ingredientes -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationContentDescription="@string/regresar"
+        app:navigationIcon="@drawable/ic_atras" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margen"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/grupo_modo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:checkedButton="@+id/btn_modo_porciones"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_modo_porciones"
+                    style="@style/Widget.PaperRecipes.BotonModo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/modo_porciones" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_modo_multiplicador"
+                    style="@style/Widget.PaperRecipes.BotonModo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/modo_multiplicador" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_modo_tengo"
+                    style="@style/Widget.PaperRecipes.BotonModo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/modo_tengo" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- Modo de porciones -->
+            <LinearLayout
+                android:id="@+id/panel_porciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_secciones"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextoAyuda"
+                    android:text="@string/cuanto_preparar" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chips_factor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="0dp"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_cuarto"
+                        style="@style/Widget.PaperRecipes.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/factor_cuarto" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_tercio"
+                        style="@style/Widget.PaperRecipes.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/factor_tercio" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_mitad"
+                        style="@style/Widget.PaperRecipes.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/factor_mitad" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_uno"
+                        style="@style/Widget.PaperRecipes.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/factor_uno" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_doble"
+                        style="@style/Widget.PaperRecipes.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/factor_doble" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_triple"
+                        style="@style/Widget.PaperRecipes.Chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/factor_triple" />
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <!-- Modo de multiplicador libre -->
+            <LinearLayout
+                android:id="@+id/panel_multiplicador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_secciones"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextoAyuda"
+                    android:text="@string/multiplicador_ayuda" />
+
+                <LinearLayout
+                    style="@style/Campo"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        style="@style/Campo.Etiqueta"
+                        android:labelFor="@+id/et_multiplicador"
+                        android:text="@string/multiplicador" />
+
+                    <EditText
+                        android:id="@+id/et_multiplicador"
+                        style="@style/Campo.Valor"
+                        android:inputType="numberDecimal"
+                        android:text="@string/multiplicador_ejemplo" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Modo de cálculo inverso: los chips de ingredientes se agregan desde PrepararActivity -->
+            <LinearLayout
+                android:id="@+id/panel_tengo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_secciones"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextoAyuda"
+                    android:text="@string/tengo_ayuda" />
+
+                <TextView
+                    style="@style/Campo.Etiqueta"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/ingrediente_que_tengo" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chips_ingredientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="0dp"
+                    app:selectionRequired="true"
+                    app:singleSelection="true" />
+
+                <LinearLayout
+                    style="@style/Campo"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:id="@+id/tv_etiqueta_tengo"
+                        style="@style/Campo.Etiqueta"
+                        android:labelFor="@+id/et_tengo" />
+
+                    <EditText
+                        android:id="@+id/et_tengo"
+                        style="@style/Campo.Valor"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_receta_usa"
+                    style="@style/TextoAyuda"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- Resumen de la escala -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_secciones"
+                android:background="@drawable/fondo_resumen"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="14dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/escala"
+                        android:textAppearance="@style/TextAppearance.PaperRecipes.EtiquetaMediana"
+                        android:textColor="@color/sobre_contenedor_primario" />
+
+                    <TextView
+                        android:id="@+id/tv_escala"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textAppearance="@style/TextAppearance.PaperRecipes.TitularChico"
+                        android:textColor="@color/sobre_contenedor_primario" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rinde"
+                        android:textAppearance="@style/TextAppearance.PaperRecipes.EtiquetaMediana"
+                        android:textColor="@color/sobre_contenedor_primario" />
+
+                    <TextView
+                        android:id="@+id/tv_rinde"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textAppearance="@style/TextAppearance.PaperRecipes.TitularChico"
+                        android:textColor="@color/sobre_contenedor_primario" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/TituloSeccion"
+                android:layout_marginTop="@dimen/espacio_secciones"
+                android:text="@string/ingredientes" />
+
+            <LinearLayout
+                android:id="@+id/lista_ingredientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacio_titulo_lista"
+                android:background="@drawable/fondo_lista"
+                android:orientation="vertical"
+                android:paddingVertical="4dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
